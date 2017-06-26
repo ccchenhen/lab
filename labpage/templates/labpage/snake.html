@@ -1,0 +1,27 @@
+{% extends 'labpage/base.html' %}
+{% block labpage %}
+    {% load static %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-2"></div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                <div class="ppx-main-block">
+                    <h2 class="text-center">贪吃蛇大作战</h2>
+                    <hr>
+                    <p>视频演示：</p>
+                    <embed wmode="direct" flashvars="vid=f1309ieuz4y&amp;tpid=0&amp;showend=1&amp;showcfg=1&amp;searchbar=1&amp;pic=//shp.qpic.cn/qqvideo_ori/0/f1309ieuz4y_496_280/0&amp;skin=http://imgcache.qq.com/minivideo_v1/vd/res/skins/TencentPlayerMiniSkin.swf&amp;shownext=1&amp;list=2&amp;autoplay=0" src="http://imgcache.qq.com/tencentvideo_v1/player/TPout.swf?max_age=86400&amp;v=20140714" quality="high" name="tenvideo_flash_player_1498468895611" id="tenvideo_flash_player_1498468895611" bgcolor="#000000" width="670px" height="502px" align="middle" allowscriptaccess="always" allowfullscreen="true" type="application/x-shockwave-flash" pluginspage="http://get.adobe.com/cn/flashplayer/">
+                    <h3>简介：</h3>
+                    <p>《贪吃蛇大作战》，一个简单到不行的游戏，也不知道怎么就火了。这实在是一个挺好实现的游戏，于是一时技痒，拿 Python 做了一个实现。使用了 cocos2d-python 作为游戏引擎。如果要运行代码，需要安装 Python 2.7 和 cocos2d 库。</p>
+                    <p>详细简介请阅读： <a href="https://zhuanlan.zhihu.com/p/22339492">https://zhuanlan.zhihu.com/p/22339492</a></p>
+                    <p>扫描右下角二维码关注微信公众号 "Crossin的编程教室"</p>
+                    <p>公众号 "Crossin的编程教室" 里回复 <strong>皮皮虾</strong>，获取 <strong>游戏程序</strong> 和 <strong>源代码</strong>。</p>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2"></div>
+        </div>
+    </div>
+
+    <script>
+        console.log({{ project.content }})
+    </script>
+{% endblock %}

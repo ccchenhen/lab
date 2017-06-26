@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crossin 的编程教室</title>
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=30493657" charset="UTF-8"></script>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'labpage/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'labpage/css/lab.css' %}">
+{#    <link rel="stylesheet" href="{% static 'labpage/css/flat-ui.min.css' %}">#}
+    <script src="{% static 'labpage/js/jquery-3.2.1.js' %}"></script>
+    <script src="{% static 'labpage/js/bootstrap.js' %}"></script>
+    {% block head %}{% endblock %}
+
+{#    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">#}
+{#    <link href="https://cdn.bootcss.com/flat-ui/2.3.0/css/flat-ui.min.css" rel="stylesheet">#}
+{#    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>#}
+{#    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>#}
+
+</head>
+<body>
+{#        导航条#}
+    <nav class="navbar navbar-default navbar-fixed-top lab-navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#ul_tags" >
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="http://crossincode.com/" class="navbar-brand" target="_blank">Crossin的编程教室</a>
+
+            </div>
+            <div class="collapse navbar-collapse" id="ul_tags">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/">实验室</a></li>
+                    <li><a href="https://zhuanlan.zhihu.com/crossin" target="_blank">知乎</a></li>
+{#                    <li><a href="#">在线教室</a></li>#}
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+{#      内容#}
+{% block labpage %}{% endblock %}
+
+
+{#      页脚#}
+<footer class="lab-footer">
+        <div class="container-fluid">
+            <div class="row lab-footer-row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <h4>Crossin的编程教室</h4>
+                <p>编程世界的新手村。扫描右侧二维码，关注公众号，获取更多学习资源</p>
+                <p><a href="http://crossincode.com/school/course/1/">Python实战</a> · <a href="http://crossincode.com/school/course/2/">爬虫实战</a></p>
+
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <img src="{% static 'labpage/img/wxqr.jpg' %}" alt="" class="lab-ft-img pull-right">
+            </div>
+
+        </div>
+        </div>
+    </footer>
+</body>
+</html>

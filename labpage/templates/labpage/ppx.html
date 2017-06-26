@@ -1,0 +1,29 @@
+{% extends 'labpage/base.html' %}
+{% block labpage %}
+    {% load static %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-2"></div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                <div class="ppx-main-block">
+                    <h2 class="text-center">如何用100行Python代码做出魔性声控游戏“八分音符酱”</h2>
+                    <hr>
+                    <p>首先看效果：</p>
+                    <embed src="https://imgcache.qq.com/tencentvideo_v1/playerv3/TPout.swf?max_age=86400&v=20161117&vid=z0380ogn3e7&auto=0" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
+                    <br>
+                    <h3>简介:</h3>
+                    <p>原本游戏叫做《不要停！八分音符酱♪》。它是一款来自岛国的恶搞游戏，主角是一只可爱的小生物 — 八分音符酱，玩家通过对它喊话来控制其前进和跳跃。Crossin 用了大约 100 行 Python 代码，自己实现了一个。而且，还配了个超霸气的主角：海中霸主皮皮虾！</p>
+                    <p>详细简介请阅读： <a href="https://zhuanlan.zhihu.com/p/25499306">https://zhuanlan.zhihu.com/p/25499306</a></p>
+                    <p>扫描右下角二维码关注微信公众号 "Crossin的编程教室"</p>
+                    <p>公众号 "Crossin的编程教室" 里回复 <strong>皮皮虾</strong>，获取 <strong>游戏程序</strong> 和 <strong>源代码</strong>。</p>
+
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2"></div>
+        </div>
+    </div>
+
+    <script>
+        console.log({{ project.content }})
+    </script>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'labpage/base.html' %}
+{% block labpage %}
+    {% load static %}
+
+
+{#   添加图片#}
+    <div class="jumbotron lab-jumbotron" style="background-image: url({% static 'labpage/img/office-581131_1920.jpg' %})">
+        <div class="container">
+            <div class="lab-title">
+                <h2>编程教室实验室</h2>
+                <h4>编程世界的进阶之路</h4>
+            </div>
+        </div>
+    </div>
+
+{#   展示模块 1 #}
+    <div class="container">
+        <h2 class="text-center">实战项目</h2>
+        <div class="row">
+            <div class="x"></div>
+        </div>
+
+    </div>
+
+
+{#      展示块 #}
+    <div class="container-fluid">
+        <div class="row lab-row">
+            <hr>
+            {% for project in projects %}
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="lab-block">
+                    <div class="lab-inner-block">
+                        <div class="lab-img">
+                            <img src="{{ project.image.url }}" alt="" class="lab-img-width">
+                        </div>
+                        <h3 class="text-center"><a href="{{ project.url_mark }}/">{{ project.title }}</a></h3>
+                        <p class="text-center">@by {{ project.author }}</p>
+                        <p class="text-center">{{ project.abstract }}</p>
+
+                    </div>
+                </div>
+            </div>
+
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
