@@ -1,0 +1,26 @@
+{% extends 'labpage/base.html' %}
+{% block labpage %}
+    {% load static %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-2"></div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                <div class="ppx-main-block">
+                    <h2 class="text-center">扫码入库小程序</h2>
+                    <hr>
+                    <h4>试用小程序</h4>
+                    <img src="{% static 'labpage/img/mina_code.jpg' %}" alt="" >
+                    <br><br>
+                    <h4>小程序页面截图：</h4>
+                    <img src="{% static 'labpage/img/scancode.png' %}" alt="" class="scan-img">
+                    <br><br>
+{#                    <h3>简介：</h3>#}
+                    <p>扫码小程序介绍：<a href="https://zhuanlan.zhihu.com/p/27526461" target="_blank">https://zhuanlan.zhihu.com/p/27526461</a></p>
+                    <p>扫描右下角二维码关注微信公众号 "Crossin的编程教室"</p>
+                    <p>公众号 "Crossin的编程教室" 里回复 <strong>小程序</strong>，获取 <strong>源代码</strong>。</p>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2"></div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'labpage/base.html' %}
+{% block labpage %}
+    {% load static %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-2"></div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                <div class="ppx-main-block">
+                    <h2 class="text-center">搭建免费博客</h2>
+                    <hr>
+                    <p>本项目介绍了两种方法搭建免费博客，分别是 Github+Hexo 和 Github+Pythonanywhere</p>
+                    <h3>Github+Hexo 系列</h3>
+                    <p>效果如图：</p>
+                    <img src="{% static 'labpage/img/deploy1.png' %}" alt="" class="scan-img">
+                    <br><br>
+                    <p>用 GitHub + Hexo 建立你的第一个博客： <a target="_blank" href="http://mp.weixin.qq.com/s?__biz=MjM5MDEyMDk4Mw==&mid=2650166025&idx=1&sn=50a22c1953f57db0240ca2d1363ba47a&scene=21#wechat_redirect">点击链接查看</a></p>
+                    <p>Hexo(2)-部署博客及更新博文：<a href="https://zhuanlan.zhihu.com/p/22498474" target="_blank">点击链接查看</a></p>
+                    <p>Hexo(3)-安装自己喜欢的主题：<a target="_blank" href="http://mp.weixin.qq.com/s?__biz=MjM5MDEyMDk4Mw==&mid=2650166056&idx=1&sn=5693b76cd7528d76305f420deb2f2598&scene=0#wechat_redirect">点击链接查看</a></p>
+                    <p>查看部署效果：<a href="http://liangwenhao.cn/" target="_blank">http://liangwenhao.cn/</a></p>
+                    <br>
+                    <h3>Github+PythonAnywhere 系列</h3>
+                    <p>效果如图：</p>
+                    <img src="{% static 'labpage/img/deploy2.png' %}" alt="" class="scan-img">
+                    <br><br>
+                    <p>把你开发的网站免费发布到互联网上(1)：<a href="https://zhuanlan.zhihu.com/p/24650061" target="_blank">点击链接查看</a></p>
+                    <p>把你开发的网站免费发布到互联网上(2)：<a target="_blank" href="http://mp.weixin.qq.com/s?__biz=MjM5MDEyMDk4Mw==&mid=2650166206&idx=1&sn=dc302be69e9007461b70b0f9d4cb7e2b&scene=0#wechat_redirect">点击链接查看</a></p>
+                    <p>查看部署效果：<a href="http://zx576.pythonanywhere.com/" target="_blank">http://zx576.pythonanywhere.com/</a></p>
+                    <br>
+                    <p>扫描右下角二维码关注微信公众号 "Crossin的编程教室"</p>
+{#                    <p>公众号 "Crossin的编程教室" 里回复 <strong>皮皮虾</strong>，获取 <strong>游戏程序</strong> 和 <strong>源代码</strong>。</p>#}
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2"></div>
+        </div>
+    </div>
+
+{% endblock %}
