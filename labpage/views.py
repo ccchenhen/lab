@@ -5,18 +5,17 @@ from .models import Project
 
 # 首页
 def index(request):
-
-    return render(request, 'labpage/index.html')
+    projects = Project.objects.all()
+    content = {
+        'projects': projects
+    }
+    return render(request, 'labpage/index.html', content)
 
 
 # 皮皮虾
 def ppx(request):
-    project_ppx = Project.objects.get(url_mark='ppx')
-    print(project_ppx.content)
-    content = {
-        'project': project_ppx
-    }
-    return render(request, 'labpage/ppx.html', content)
+
+    return render(request, 'labpage/ppx.html')
 
 
 # 贪吃蛇
