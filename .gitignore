@@ -7,3 +7,6 @@ uwsgi_params
 tools.log
 .idea
 pic/
+server_settings.py
+config/
+
