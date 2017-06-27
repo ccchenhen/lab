@@ -6,6 +6,6 @@ urlpatterns = [
     url(r'^ppx/$', views.ppx, name='ppx'),
     url(r'^snake/$', views.snake, name='snake'),
     url(r'^deploy/$', views.deploy, name='deploy'),
-    url(r'^scancode/$', views.scancode, name='scancode')
+    url(r'^minaqr/$', views.scancode, name='scancode')
 
 ]

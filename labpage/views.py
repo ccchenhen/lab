@@ -5,7 +5,7 @@ from .models import Project
 
 # 首页
 def index(request):
-    projects = Project.objects.all()
+    projects = Project.objects.filter(is_active=True)
     content = {
         'projects': projects
     }
