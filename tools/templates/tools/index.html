@@ -1,0 +1,31 @@
+{% extends 'tools/base.html' %}
+{% block index %}
+    <p class="tools-index-text text-center h2">在线工具</p>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 tools-area">
+                <hr>
+                <div class="tools-index-tools">
+                    {% for item in tools %}
+
+                        <a class="tools-index-tools-item" href="{{ item.mark }}">
+                            <span class="tools-index-tools-item-img">
+                                <img src="{{ item.image.url }}" alt="" class="tools-index-pic" >
+                            </span>
+                            <div class="tools-index-tools-item-text">
+                                <div class="tools-index-tools-item-title">{{ item.title }}</div>
+                                <div class="tools-index-tools-item-ins">{{ item.instruction }}</div>
+                            </div>
+                        </a>
+
+                    {% endfor %}
+
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+        </div>
+    </div>
+
+{% endblock %}

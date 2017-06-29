@@ -1,0 +1,39 @@
+{% extends 'tools/base.html' %}
+{% block tool-page %}
+    <p class="tools-index-text text-center h2">MD/HTML互转</p>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2 col-sm-2 col-md-2"></div>
+            <div class="col-lg-8 col-sm-8 col-md-8 col-xs-12 tools-area">
+                <hr>
+                <div class="tools-md-area">
+                    <textarea name="" id="mdtext" rows="10" class="tools-md-text" placeholder="在此输入需转换的markdown文本或者html文本，点击相应按钮即可"></textarea>
+                    <div class="tools-md-btngroup">
+                        <button class="btn btn-success tools-btn" id="md2h">md转html</button>
+                        <button class="btn btn-success tools-btn" id="h2md">html转md</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-sm-2 col-md-2"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.bootcss.com/to-markdown/3.0.4/to-markdown.js"></script>
+    <script src="https://cdn.bootcss.com/showdown/1.7.1/showdown.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#md2h').click(function () {
+                var mdtext = $('#mdtext').val();
+                var converter = new showdown.Converter();
+                var html = converter.makeHtml(mdtext);
+                $('#mdtext').val(html)
+            });
+            $('#h2md').click(function () {
+                var httext = $('#mdtext').val();
+                var mdtext = toMarkdown(httext);
+                $('#mdtext').val(mdtext)
+            })
+        })
+    </script>
+{% endblock %}

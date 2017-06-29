@@ -1,0 +1,63 @@
+{% extends 'tools/base.html' %}
+{% block tool-page %}
+{#    <script src="https://cdn.bootcss.com/Base64/1.0.1/base64.js"></script>#}
+    {% load static %}
+    <script src="{% static 'tools/js/base64.min.js' %}"></script>
+    <p class="tools-index-text text-center h2">在线 Base64 加密解密</p>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 col-xs-2"></div>
+            <div class="col-md-8 col-xs-12 tools-area">
+                <hr>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                            <div class="tools-base64-area">
+                                <textarea name="" id="base64text" rows="10" class="tools-base64-text" placeholder="在此输入需要加密或解密的内容, 点击相应按钮即可"></textarea>
+                                <div class="tools-base64-btngroup">
+                                    <button class="btn btn-primary tools-base64-btn" id="encode">base64加密</button>
+                                    <button class="btn btn-default tools-base64-btn" id="decode">base64解密</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 "></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('#encode').click(function () {
+                var text = $('#base64text').val();
+{#                console.log(text);#}
+                var output = null;
+                if (text === ''){
+                    return null
+                } else {
+                    output = Base64.encode(text);
+{#                    console.log(output);#}
+                    $('#base64text').val(output)
+                }
+            });
+            $('#decode').click(function () {
+                var text = $('#base64text').val();
+                var output = null;
+                if (text === ''){
+                    return null
+                } else {
+                    output = Base64.decode(text);
+                    $('#base64text').val(output)
+                }
+
+            })
+        })
+    </script>
+
+
+{% endblock %}

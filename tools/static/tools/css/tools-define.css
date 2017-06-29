@@ -1,0 +1,254 @@
+/*
+author : zhouxin
+date : 2017.6.13
+program : online tools
+ */
+/*适配 768px以上的屏幕*/
+
+/*base.html*/
+
+.tools-base-collap{
+    background-color: #f8f8f8;
+}
+.tools-base-color{
+    background-color: #fff;
+}
+.tools-body{
+    background-color: #f8f8f8;
+}
+
+.tools-navi{
+    background-color: #fff;
+}
+.tools-tags{
+    background-color: #fff;
+}
+.tools-tags:hover{
+    text-decoration: none;
+}
+
+
+/*index.html*/
+
+.tools-index-text{
+    color: black;
+    margin: 50px auto 20px;
+    font-family: 'Ubuntu', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif;
+
+}
+.tools-index-tools{
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    align-content: center;
+    flex-shrink: 1;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.tools-index-tools-item{
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    /*border: 1px solid black;*/
+    height: 90px;
+    width: 270px;
+    margin: 0 auto 20px;
+    background-color: #fff;
+    color: black;
+    transition: margin-top 300ms;
+}
+.tools-index-tools-item:hover{
+    text-decoration: none;
+    color: green;
+    margin-top: -5px;
+    box-shadow: 5px 5px 10px #999999;
+
+}
+.tools-index-tools-item-text{
+    display: block;
+    /*margin: 20px 10px 20px 5px;*/
+    /*padding: 0 px;*/
+}
+.tools-index-tools-item-img{
+    padding:0 10px;
+    /*margin: 20px 5px 20px 10px;*/
+}
+
+.tools-index-tools-item-title{
+    font-size: 17px;
+    font-weight: bold;
+}
+.tools-index-tools-item-ins{
+    padding-top: 10px;
+    font-size: 11px;
+    color: #999999;
+
+}
+.tools-index-pic{
+    width: 60px;
+    height: 60px;
+}
+
+/*qrcode.html*/
+
+.tools-qrcode-config{
+    width: 100%;
+    background-color: #fff;
+    padding: 10px;
+    min-height: 290px;
+}
+.tools-qrcode-btn{
+    margin-top: 20px;
+}
+
+.tools-qrcode-display{
+    width: 100%;
+    background-color: #fff;
+    min-height: 290px;
+}
+.tools-qrcode-textarea{
+    width: 100%;
+    resize: none;
+}
+
+.tools-index-input{
+    width: 100%;
+    margin-top: 18px;
+}
+.tools-qrcode-img{
+    width: 80%;
+}
+/*base64.html*/
+
+.tools-base64-area{
+    width: 100%;
+    /*height: 350px;*/
+    background-color: #fff;
+    margin: 0 auto;
+    padding: 10px 10px;
+}
+.tools-base64-text{
+    width: 100%;
+    resize: none;
+}
+.tools-base64-btngroup{
+    margin-top: 10px;
+    display: flex;
+    flex-flow: row;
+}
+.tools-base64-btn{
+    margin-right: 20px;
+}
+
+/*convertion.html*/
+
+.tools-conv-area-left{
+    background-color: #fff;
+    padding: 10px 10px;
+    min-height: 270px;
+}
+
+.tools-conv-area-right{
+    background-color: #fff;
+    padding: 10px 10px;
+    min-height: 270px;
+}
+.tools-conv-input{
+    margin: 10px auto;
+    width: 100%;
+
+}
+.tools-conv-form{
+    padding: 10px 20px 30px ;
+}
+.tools-conv-trinput{
+    width: 100%;
+    border: none;
+}
+
+/*markdown.html*/
+.tools-md-area{
+    padding: 10px 10px;
+    margin: 10px 10px;
+    background-color: #fff;
+
+}
+.tools-md-text{
+    width: 100%;
+    resize: none;
+
+}
+.tools-md-btngroup{
+    margin-top: 10px;
+}
+
+/*regexp.html*/
+
+.tools-reg-area{
+    display: flex;
+    flex-flow: column;
+    margin: 10px 10px;
+    padding: 10px 10px;
+    background-color: #fff;
+
+}
+
+.tools-reg-text{
+    width: 100%;
+    resize: none;
+
+}
+.tools-reg-exp{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: inline;
+}
+
+.tools-reg-input{
+    /*width: 80%;*/
+}
+
+
+/*cron.html*/
+.tools-cr-area{
+    margin: 10px 10px;
+    padding: 10px 10px;
+    background-color: #fff;
+}
+
+.tools-cr-ta{
+    resize: none;
+    width: 100%;
+    border: none;
+
+}
+.tools-cr-ins{
+
+    padding-top: 10px;
+}
+
+/*statuscode.html*/
+.tools-sc-table{
+    width: 100%;
+}
+.tools-sc-textarea{
+    resize: none;
+    width: 100%;
+    /*background-color: #999999;*/
+    border: none;
+
+}
+.tools-cr-textarea:hover{
+    border: none;
+}
+.tools-sc-ipt{
+    width: 30%;
+    margin-right: 20px;
+}
+
+/*jsonpretty.html*/
+.tools-jp-btn{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

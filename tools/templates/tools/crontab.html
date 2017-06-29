@@ -1,0 +1,88 @@
+{% extends 'tools/base.html' %}
+{% block head %}
+    <script src="https://cdn.bootcss.com/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://cdn.bootcss.com/later/1.2.0/later.min.js"></script>
+    <script src="https://cdn.bootcss.com/prettycron/0.11.0/prettycron.min.js"></script>
+{% endblock %}
+
+{% block tool-page %}
+    <p class="tools-index-text text-center h2">Crontab时间计算</p>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2"></div>
+            <div class="col-lg-8 col-sm-8 col-md-8 col-xs-12 tools-area">
+
+                <hr>
+                <div class="tools-cr-area">
+{#                    输入框#}
+                    <div class="input-group">
+                        <input type="text" class="form-control" value="0 */12 * * *" id="crinput">
+                        <span class="input-group-btn">
+                        <button class="btn btn-primary tools-btn" id="crbtn">转换</button>
+                        </span>
+                    </div>
+{#                    解释框#}
+                    <hr id="hr1" class="hidden">
+                    <div class="tools-cr-ins">
+{#                        <p id="crinstitle"></p>#}
+
+                        <pre id="crins" class="hidden"></pre>
+                    </div>
+{#                    接下来的运行时间#}
+                    <hr id="hr2" class="hidden">
+                    <div class="tools-cr-textarea">
+                        <textarea name="" id="crtextarea"  rows="10" class="tools-cr-ta hidden"></textarea>
+                    </div>
+
+{#                    crontab解释#}
+                    <hr>
+                    <pre class="tools-cron-pre">
+*    *    *    *    *    *
+-    -    -    -    -    -
+|    |    |    |    |    |
+|    |    |    |    |    + year [optional]
+|    |    |    |    +----- day of week (0 - 7) (Sunday=0 or 7)
+|    |    |    +---------- month (1 - 12)
+|    |    +--------------- day of month (1 - 31)
+|    +-------------------- hour (0 - 23)
++------------------------- min (0 - 59)
+                    </pre>
+
+                </div>
+            </div>
+            <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2"></div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('#crbtn').click(function () {
+                var raw = $('#crinput').val();
+{#                解释该写法#}
+                var ins = get_ins(raw);
+                $('#hr1').removeClass('hidden');
+                $('#crins').text('Crontab时间解释: '+ins).removeClass('hidden');
+{#                列出之后　７　次运行结果#}
+                var seven = get_nextdates(raw, 7);
+                $('#hr2').removeClass('hidden');
+                $('#crtextarea').val(seven).removeClass('hidden')
+            })
+        })
+    </script>
+    <script>
+        function  get_ins(s) {
+            return prettyCron.toString(s);
+        }
+        function get_nextdates(s, num) {
+            var res_lst = prettyCron.getNextDates(s, num);
+            var res = '之后　７　次运行时间\n';
+            for (i of res_lst){
+                res += i + '\n'
+            }
+            return res
+        }
+
+    </script>
+
+{% endblock %}

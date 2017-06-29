@@ -1,0 +1,307 @@
+/*
+date: 2017/6/20
+author: zhouxin
+func: suit http:www.lab.crossincode.com/tools for mobile
+
+*/
+
+.self-body{
+    background-color: #f8f8f8;
+}
+.self-btn{
+    font-size: 10px;
+}
+.self-navi{
+    background-color: #fff;
+    height: 60px;
+    padding-top: 15px;
+}
+.self-tags{
+    background-color: #fff;
+    font-size: 15%;
+}
+
+/*index.html*/
+
+.self-index-text{
+    color: black;
+    margin: 80px auto 0;
+    /*font-weight: bold;*/
+    font-family: 'Ubuntu', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif;
+    font-size: large;
+
+}
+
+.self-index-tools{
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    flex-shrink: 1;
+    justify-content: space-between;
+    padding: 0 0;
+}
+
+.self-index-tools-item{
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    /*border: 1px solid black;*/
+    min-height: 50px;
+    width: 49%;
+    margin-bottom: 10px ;
+    background-color: #fff;
+    color: black;
+    transition: margin-top 300ms;
+}
+.self-index-tools-item:hover{
+    text-decoration: none;
+    color: green;
+    margin-top: -5px;
+    box-shadow: 5px 5px 10px #999999;
+
+}
+.self-index-tools-item-text{
+    display: block;
+    /*margin: 20px 10px 20px 5px;*/
+    /*padding: 0 px;*/
+}
+.self-index-tools-item-img{
+    padding:0 10px;
+    /*margin: 20px 5px 20px 10px;*/
+}
+
+.self-index-tools-item-title{
+    font-size: 10px;
+    font-weight: bold;
+}
+.self-index-tools-item-ins{
+    /*padding-top: 10px;*/
+    font-size: 6px;
+    color: #999999;
+
+}
+.self-index-pic{
+    width: 30px;
+    height: 30px;
+}
+
+/*qrcode.html*/
+.self-qrcode-area{
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.self-qrcode-config{
+    width: 100%;
+    /*border: 1px solid black;*/
+    background-color: #fff;
+    /*height: 400px;*/
+    display: block;
+    padding: 5px;
+}
+
+.self-qrcode-display{
+    width: 100%;
+    background-color: #fff;
+    padding-bottom: 10px;
+}
+.self-qrcode-textarea{
+    height: 50px;
+    width: 100%;
+    resize: none;
+    margin-top: 5px;
+}
+::-webkit-input-placeholder{
+    font-size: 8px;
+}
+
+.self-qrcode-btn{
+    margin-top: 10px;
+    font-size: 10px;
+}
+.self-index-input{
+    width: 100%;
+    margin-top: 10px;
+}
+.self-qrcode-img{
+    width: 60%;
+    display: block;
+}
+/*base64.html*/
+
+.self-base64-area{
+    width: 100%;
+    background-color: #fff;
+    margin: 20px auto 5px;
+    padding: 10px 10px;
+}
+.self-base64-text{
+    width: 100%;
+    height: 150px;
+    resize: none;
+}
+.self-base64-btngroup{
+    margin-top: 10px;
+    display: flex;
+    flex-flow: row;
+
+}
+.self-base64-btn{
+    margin-right: 20px;
+    font-size: 10px;
+
+}
+
+/*convertion.html*/
+.self-conv-area{
+    padding: 5px 10px;
+    display: flex;
+    flex-flow: column;
+    /*justify-content: space-between;*/
+
+}
+.self-conv-area-left{
+    width: 100%;
+    background-color: #fff;
+    padding: 5px 10px;
+}
+
+.self-conv-area-right{
+    width: 100%;
+    background-color: #fff;
+    padding: 10px 10px;
+}
+.self-conv-input{
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    /*margin-left: 5px;*/
+    width: 100%;
+}
+.self-conv-form {
+    display: flex;
+    flex-flow: column;
+    /*justify-content: space-between;*/
+    padding: 10px 30px;
+}
+.self-conv-f-label{
+    padding-left: -15px;
+}
+
+.self-conv-form label{
+    font-size: 15px;
+}
+.self-conv-trinput{
+    width: 100%;
+    border: none;
+}
+
+/*markdown.html*/
+.self-md-area{
+    padding: 10px 10px;
+    margin: 10px 10px;
+    background-color: #fff;
+    /*height:500px;*/
+
+}
+.self-md-text{
+    margin-left: 1px;
+    width: 100%;
+    resize: none;
+    height: 200px;
+
+}
+.self-md-btngroup{
+    margin-top: 10px;
+}
+
+/*regexp.html*/
+
+.self-reg-area{
+    display: flex;
+    flex-flow: column;
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    margin: 10px 12px;
+    padding: 10px 10px;
+    background-color: #fff;
+
+}
+
+.self-reg-text{
+    width: 100%;
+    resize: none;
+
+}
+.self-reg-exp{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: inline;
+}
+
+.self-reg-input{
+    margin-top: 10px;
+    width: 70%;
+}
+
+
+/*cron.html*/
+.self-cr-area{
+    margin: 10px 10px;
+    padding: 10px 10px;
+    background-color: #fff;
+}
+.self-cr-input{
+    margin-left: 10px;
+    display: block;
+}
+.self-cr-input-text{
+    width: 70%;
+    margin-right: 20px;
+}
+
+.self-cr-ta{
+    resize: none;
+    width: 100%;
+    border: none;
+
+}
+.self-cr-ins{
+    font-size: 10px;
+    padding-top: 10px;
+}
+.self-cron-pre{
+    font-size: 10px;
+}
+
+/*statuscode.html*/
+.self-sc-table{
+    width: 100%;
+    font-size: 8px;
+}
+.self-sc-textarea{
+    resize: none;
+    width: 100%;
+    /*background-color: #999999;*/
+    border: none;
+    font-size: 10px;
+    height: 80px;
+
+}
+.self-cr-textarea:hover{
+    border: none;
+}
+.self-sc-ipt{
+    margin-left: 10px;
+    width: 70%;
+    margin-right: 10px;
+}
+
+/*jsonpretty.html*/
+.self-jp-btn{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/*game2048.html*/

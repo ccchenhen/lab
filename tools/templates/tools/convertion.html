@@ -1,0 +1,109 @@
+{% extends 'tools/base.html' %}
+{% block tool-page %}
+    <p class="tools-index-text text-center h2">在线进制转换</p>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-2"></div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 tools-area">
+                <hr>
+
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+
+                            <div class="tools-conv-area-left">
+                                <div class="tools-conv-form">
+                                    <label for="" class="radio ">
+                                        <input type="radio" value="2" name="conv"> 2进制
+                                    </label>
+                                    <label for="" class="radio">
+                                        <input type="radio" value="8" name="conv"> 8进制
+                                    </label>
+                                    <label for="" class="radio">
+                                        <input type="radio" value="10" name="conv" checked> 10进制
+                                    </label>
+                                    <label for="" class="radio">
+                                        <input type="radio" value="16" name="conv"> 16进制
+                                    </label>
+                                    <label for="" class="radio">
+                                        <input type="radio" value="32" name="conv"> 32进制
+                                    </label>
+                                </div>
+                                <div class="input-group">
+                                    <input type="text" placeholder="输入转换数字" class="form-control" id="inputvalue">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-success" id="convbtn">转换</button>
+                                    </span>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                             <div class="tools-conv-area-right">
+                                <table class="table">
+                                    <tr class="table success">
+                                        <td>进制</td>
+                                        <td>转换结果</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td><input type="text" class="tools-conv-trinput" id="res2"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td><input type="text" class="tools-conv-trinput" id="res8"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td><input type="text" class="tools-conv-trinput" id="res10"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>16</td>
+                                        <td><input type="text" class="tools-conv-trinput" id="res16"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>32</td>
+                                        <td><input type="text" class="tools-conv-trinput" id="res32"></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('#convbtn').click(function () {
+                var str_radio_value = $('input:radio[name="conv"]:checked').val();
+                var radio_value = parseInt(str_radio_value);
+                var b_input_value = $('#inputvalue').val();
+                var input_value = check(b_input_value);
+
+{#                转换为 10 进制#}
+                var val10 = parseInt(input_value, radio_value);
+{#                10 进制转其他进制#}
+                var res2 = val10.toString(2);
+                $('#res2').attr('value', res2);
+                var res8 = val10.toString(8);
+                $('#res8').attr('value', res8);
+                var res10 = val10.toString(10);
+                $('#res10').attr('value', res10);
+                var res16 = val10.toString(16);
+                $('#res16').attr('value', res16);
+                var res32 = val10.toString(32);
+                $('#res32').attr('value', res32);
+            })
+        })
+    </script>
+    <script>
+        var check = function(value){
+            return value
+        }
+    </script>
+{% endblock %}
