@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'labpage.apps.LabpageConfig',
     'tools.apps.ToolsConfig',
+    'mycode.apps.MycodeConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
