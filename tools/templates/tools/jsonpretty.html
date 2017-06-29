@@ -1,0 +1,43 @@
+{% extends 'tools/base.html' %}
+{% block head %}
+    <link href="https://cdn.bootcss.com/jquery-jsonview/1.2.3/jquery.jsonview.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery-jsonview/1.2.3/jquery.jsonview.min.js"></script>
+{% endblock %}
+
+{% block tool-page %}
+
+    <p class="tools-index-text text-center h2">JSON字符串美化</p>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2 col-sm-2 col-md-2"></div>
+            <div class="col-lg-8 col-sm-8 col-md-8 col-xs-12 tools-area">
+                <hr>
+                <div class="tools-cr-area">
+                    <textarea name="" id="textarea" rows="10" class="tools-base64-text" placeholder="粘贴所需美化的json字符串"></textarea>
+                    <button class="btn btn-default tools-jp-btn tools-btn">美化</button>
+                    <pre id="text2" class="tools-base64-text hidden" ></pre>
+                </div>
+            </div>
+            <div class="col-lg-2 col-sm-2 col-md-2"></div>
+        </div>
+    </div>
+
+
+    <script>
+        $(function () {
+            $('button').click(function () {
+                var ipt = $('#textarea').val();
+                console.log(ipt);
+                try{
+                $("#text2").JSONView(ipt)
+                    } catch(e){
+                    $("#text2").text(e)
+                } finally {
+                     $("#text2").removeClass('hidden');
+                }
+
+            })
+        })
+    </script>
+{% endblock %}

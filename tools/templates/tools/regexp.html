@@ -1,0 +1,77 @@
+{% extends 'tools/base.html' %}
+{% block tool-page%}
+    <p class="tools-index-text text-center h2">正则表达式匹配</p>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2 col-sm-2 col-md-2"></div>
+            <div class="col-lg-8 col-sm-8 col-md-8 col-xs-12 tools-area">
+                <hr>
+                <div class="tools-reg-area">
+                    <textarea name="" id="regtext" rows="5" class="tools-reg-text" placeholder="输入需匹配的文本"></textarea>
+                    <div class="tools-reg-exp">
+                        <label for="">
+                        <input type="checkbox" id="regi" value="i" checked="checked" name="regig">忽略大小写
+                        </label>
+                        <label for="">
+                        <input type="checkbox" id="regg" value="g" name="reggl" checked="checked">全局匹配
+                        </label>
+                        <br>
+
+                        <div class="input-group">
+                            <input type="text" class="tools-reg-input form-control" placeholder="正则表达式" id="reginput">
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" id="regbtn">匹配</button>
+                            </span>
+                        </div>
+
+                    </div>
+                    <textarea name="" id="regres" rows="5" class="tools-reg-text" placeholder="匹配结果"></textarea>
+                </div>
+            </div>
+            <div class="col-lg-2 col-sm-2 col-md-2"></div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            console.log($('#regi').is(":checked"));
+            $('#regbtn').click(function () {
+                onMatch()
+            })
+        })
+    </script>
+
+    <script>
+        function buildRegex() {
+            var op = "";
+            if ($('#regi').is(":checked")){op = "g"}
+            if ($('#regg').is(":checked")){op = op + "i"}
+{#            console.log($('#reginput').val());#}
+            return new RegExp($('#reginput').val(), op);
+        }
+        function onMatch() {
+{#            if (!isValidFields())#}
+{#            return false;#}
+{#            document.getElementById("textMatchResult").value = "";#}
+            var regex = buildRegex();
+            var result = $('#regtext').val().match(regex);
+{#            console.log(regex);#}
+            if (null==result || 0 ==result.length) {
+                $('#regres').val('没有匹配');
+                return false;
+            }
+            if ($('#regg').is(":checked")) {
+                var strResult = "共找到 " + result.length + " 处匹配：\r\n";
+                for (var i=0;i < result.length;++i)strResult = strResult + result[i] + "\r\n";
+                $('#regres').val(strResult);
+            }
+            else {
+                var strResult = "匹配位置：" + regex.lastIndex + "\r\n匹配结果：" + result[0];
+                $('#regres').val(strResult);
+            }
+            return true;
+        }
+
+
+    </script>
+{% endblock %}
