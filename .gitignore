@@ -1,10 +1,7 @@
 db.sqlite3
 *.pyc
 __pycache__/
-tools.pid
-tools.ini
 uwsgi_params
-tools.log
 .idea
 pic/
 server_settings.py
