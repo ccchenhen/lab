@@ -65,12 +65,16 @@
     padding: 20px 20px;
     font-size: 16px;
 }
-.ppx-main-block img{
-    width: 100%;
-}
+/*.ppx-main-block img{*/
+    /*width: 100%;*/
+/*}*/
 
 .ppx-main-block embed{
     margin:10px auto;
     /*width: 100%;*/
 }
 
+/*scanqrcode.html*/
+.scan-img{
+    width: 60%;
+}
