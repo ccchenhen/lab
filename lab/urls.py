@@ -23,6 +23,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'tools/', include('tools.urls', namespace='tools', app_name='tools')),
     url(r'scan/', include('mycode.urls', namespace='mycode', app_name='mycode')),
+    url(r'proxypool/', include('myproxy.urls', namespace='myproxy', app_name='myproxy')),
     url(r'', include('labpage.urls',namespace='lab',app_name='labpage'))
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

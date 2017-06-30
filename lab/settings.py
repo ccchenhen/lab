@@ -34,6 +34,8 @@ INSTALLED_APPS = [
     'labpage.apps.LabpageConfig',
     'tools.apps.ToolsConfig',
     'mycode.apps.MycodeConfig',
+    'myproxy.apps.MyproxyConfig',
+    'import_export',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -116,7 +118,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
