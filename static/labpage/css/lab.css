@@ -38,8 +38,16 @@
     width: 264px;
     height:320px;
     border: 1px solid #B8B8B8;
+    display: block;
+    /*transition: margin-top 300ms;*/
 
 }
+.lab-inner-block:hover{
+    text-decoration-line: none;
+    /*margin-top: -5px;*/
+    box-shadow: 5px 5px 10px #999999;
+}
+
 .lab-row{
     margin-left: 5%;
     margin-right: 5%;
