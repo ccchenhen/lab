@@ -51,27 +51,33 @@ class GeneralMethods():
         :param url: 获取 cookie 的地址
         :return: 返回字符串形式的
         '''
-        driver = webdriver.PhantomJS()
-        driver.get(url)
-        cookie = [item["name"] + "=" + item["value"] for item in driver.get_cookies()]
-        cookiestr = ';'.join(item for item in cookie)
-        driver.quit()
-        return cookiestr
+        try:
+            driver = webdriver.PhantomJS()
+            driver.get(url)
+            cookie = [item["name"] + "=" + item["value"] for item in driver.get_cookies()]
+            cookiestr = ';'.join(item for item in cookie)
+            driver.quit()
+            return cookiestr
+        except Exception as e:
+            print(e)
 
 
     def get_source_by_selenium(self, url):
-        driver = webdriver.PhantomJS()
-        driver.get(url)
+        try:
+            driver = webdriver.PhantomJS()
+            driver.get(url)
 
-        page_state = ''
-        while True:
-            page_state = driver.execute_script('return document.readyState;')
-            if page_state == 'complete':
-                break
-            time.sleep(3)
+            page_state = ''
+            while True:
+                page_state = driver.execute_script('return document.readyState;')
+                if page_state == 'complete':
+                    break
+                time.sleep(3)
 
 
-        return driver.page_source
+            return driver.page_source
+        except Exception as e:
+            print(e)
 
 
     def req_url(self,url, headers, rep_count=1):
