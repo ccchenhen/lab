@@ -17,8 +17,8 @@ def checkdata(code, ecrypteddata, iv):
 
 
     # 编程教室官方 appid
-    appid = 'wx yourappid d9'
-    secret = '6a yoursecret 9dd'
+    appid = 'wx9c35392885dec4d9'
+    secret = '6a8841a81ad71dfac61b155cbe48c9dd'
 
     # 微信服务器链接
     url = 'https://api.weixin.qq.com/sns/jscode2session?appid={0}&secret={1}&js_code={2}&grant_type=authorization_code'
