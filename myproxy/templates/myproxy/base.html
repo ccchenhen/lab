@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    {% block head  %}{% endblock %}
     <title>免费IP池代理</title>
     {% load static %}
 {#    <link rel="stylesheet" href="{% static 'myproxy/css/bootstrap.min.css' %}">#}
@@ -11,14 +12,47 @@
 {#    用于开发#}
 {#    <script src="{% static 'myproxy/js/jquery-3.1.1.js' %}"></script>#}
 {#    <script src="{% static 'myproxy/js/bootstrap.min.js' %}"></script>#}
-
 {#    #}
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=30493657" charset="UTF-8"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="icon" href="{% static 'labpage/img/bitbug_favicon.ico' %} ">
 
 </head>
 <body style="background-color: #e7e7e7;font-family: 'Segoe UI'">
+
+
+{#        导航条#}
+    <nav class="navbar navbar-default lab-navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#ul_tags" >
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="http://crossincode.com/" class="navbar-brand lab-text" target="_blank">Crossin的编程教室</a>
+
+            </div>
+            <div class="collapse navbar-collapse" id="ul_tags">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">实验室</a></li>
+                    <li class="dropdown">
+                        <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button">码上行动 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="http://crossincode.com/school/course/1/">Python入门教程</a></li>
+                            <li><a href="http://crossincode.com/school/course/2/">Python爬虫实战</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="http://bbs.crossincode.com/forum.php" target="_blank">交流论坛</a></li>
+                    <li><a href="https://zhuanlan.zhihu.com/crossin" target="_blank">知乎专栏</a></li>
+{#                    <li><a href="#">在线教室</a></li>#}
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
 <div class="container-fluid">
 <div class="row">
     <div class="col-md-1 "></div>
@@ -41,16 +75,16 @@
                 </ol>
 
             </div>
-            <div class="col-md-4 col-xs-4 proxy-base-p">
-                <p>Crossin 的编程教室</p>
-                <p>crossincode.com</p>
-                <p>微信公众号: crossincode</p>
-
-            </div>
-
-            <div class="col-md-2 col-xs-2">
-                <img src="{% static 'myproxy/img/0546.png' %}" alt="" style="width: 100%;padding-top: 10px">
-            </div>
+{#            <div class="col-md-4 col-xs-4 proxy-base-p">#}
+{#                <p>Crossin 的编程教室</p>#}
+{#                <p>crossincode.com</p>#}
+{#                <p>微信公众号: crossincode</p>#}
+{##}
+{#            </div>#}
+{##}
+{#            <div class="col-md-2 col-xs-2">#}
+{#                <img src="{% static 'myproxy/img/0546.png' %}" alt="" style="width: 100%;padding-top: 10px">#}
+{#            </div>#}
 
         </div>
 
@@ -62,12 +96,43 @@
         {% block login %}{% endblock%}
         {% block register %}{% endblock%}
         {% block api %}{% endblock %}
+
+
+        <hr>
+            {#      页脚#}
+    <footer class="proxy-footer center-block">
+        <div class="container-fluid">
+            <div class="row ">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <h4>Crossin的编程教室</h4>
+                <p>编程世界的新手村。扫描右侧二维码，关注公众号，获取更多学习资源</p>
+                <p>苏ICP备15063769号</p>
+
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <img src="{% static 'labpage/img/wxqr.jpg' %}" alt="Crossin的编程教室二维码" class="lab-ft-img pull-right">
+            </div>
+
+        </div>
+        </div>
+    </footer>
     </div>
+
+
+
     <div class="col-md-1 "></div>
+
+
+
 </div>
+
 </div>
 
 
 
+
+
+{#<p class="text-center">苏ICP备15063769号</p>#}
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=30493657" charset="UTF-8"></script>
 </body>
 </html>

@@ -1,4 +1,8 @@
 {% extends 'labpage/base.html' %}
+{% block head%}
+    <meta name="keywords" content="小程序, django, 后端, 扫码"/>
+    <meta name="description" content="实现了基本的扫码入库、出库操作，可以查询库存列表，还可以自己创建新库。"/>
+{% endblock %}
 {% block labpage %}
     {% load static %}
     <div class="container-fluid">
@@ -9,10 +13,10 @@
                     <h2 class="text-center">扫码入库小程序</h2>
                     <hr>
                     <h4>试用小程序</h4>
-                    <img src="{% static 'labpage/img/mina_code.jpg' %}" alt="" >
+                    <img src="{% static 'labpage/img/mina_code.jpg' %}" alt="扫码入库小程序" >
                     <br><br>
                     <h4>小程序页面截图：</h4>
-                    <img src="{% static 'labpage/img/scancode.png' %}" alt="" class="scan-img">
+                    <img src="{% static 'labpage/img/scancode.png' %}" alt="扫码入库小程序" class="scan-img">
                     <br><br>
 {#                    <h3>简介：</h3>#}
                     <p>扫码小程序介绍：<a href="https://zhuanlan.zhihu.com/p/27526461" target="_blank">https://zhuanlan.zhihu.com/p/27526461</a></p>

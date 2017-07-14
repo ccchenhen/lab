@@ -1,4 +1,8 @@
 {% extends 'labpage/base.html' %}
+{% block head %}
+    <meta name="keywords" content="编程实验室,项目,crossin,编程教室"/>
+    <meta name="description" content="编程实验室项目，包含了 Crossin的编程教室 下学员所完成的部分优秀项目"/>
+{% endblock %}
 {% block labpage %}
     {% load static %}
 
@@ -7,8 +11,8 @@
     <div class="jumbotron lab-jumbotron" style="background-image: url({% static 'labpage/img/office-581131_1920.jpg' %})">
         <div class="container">
             <div class="lab-title">
-                <h2>编程教室实验室</h2>
-                <h4>编程世界的进阶之路</h4>
+                <h1>编程教室实验室</h1>
+                <h2>编程世界的进阶之路</h2>
             </div>
         </div>
     </div>
@@ -33,7 +37,7 @@
                 <div class="lab-block">
                     <a class="lab-inner-block" href="{{ project.url_mark }}/">
                         <div class="lab-img">
-                            <img src="{{ project.image.url }}" alt="" class="lab-img-width">
+                            <img src="{{ project.image.url }}" alt="{{ project.title }}" class="lab-img-width">
                         </div>
 {#                        <h3 class="text-center"><a href="{{ project.url_mark }}/">{{ project.title }}</a></h3>#}
                         <h3 class="text-center">{{ project.title }}</h3>

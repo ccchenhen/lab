@@ -1,4 +1,8 @@
 {% extends 'tools/base.html' %}
+{% block head %}
+    <meta name="keywords" content="tool, 在线二维码生成, crossin, 编程教室">
+    <meta name="description" content="在线二维码生成">
+{% endblock %}
 {% block tool-page %}
 {#    二维码生成#}
     <p class="tools-index-text text-center h2">在线二维码生成</p>
@@ -36,6 +40,7 @@
     <script>
         $(document).ready(function(){
             $('#qrbtn').click(function () {
+                alert('ssss');
                 var text = $('#qrtext').val();
                 var rawurl = 'http://qr.topscan.com/api.php?text=';
                 var picaddr = $('#qraddr').val();

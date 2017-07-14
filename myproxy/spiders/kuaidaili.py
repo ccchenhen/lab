@@ -91,7 +91,7 @@ def fetch_k1():
                 port = all_td[1].string
                 http_type = all_td[2].string
                 http_head = all_td[3].string
-                district = all_td[4].string
+                district = all_td[4].string or 'None'
 
                 if '高匿' in http_type:
                     ip_type = 'G'

@@ -1,4 +1,8 @@
 {% extends 'labpage/base.html' %}
+{% block head %}
+    <meta name="keywords" content="免费,网站部署,pythonanywhere,hexo"/>
+    <meta name="description" content="本项目介绍了两种方法搭建免费博客，分别是 Github+Hexo 和 Github+Pythonanywhere"/>
+{% endblock %}
 {% block labpage %}
     {% load static %}
     <div class="container-fluid">
@@ -11,7 +15,7 @@
                     <p>本项目介绍了两种方法搭建免费博客，分别是 Github+Hexo 和 Github+Pythonanywhere</p>
                     <h3>Github+Hexo 系列</h3>
                     <p>效果如图：</p>
-                    <img src="{% static 'labpage/img/deploy1.png' %}" alt="" class="scan-img">
+                    <img src="{% static 'labpage/img/deploy1.png' %}" alt="Github+Hexo" class="scan-img">
                     <br><br>
                     <p>用 GitHub + Hexo 建立你的第一个博客： <a target="_blank" href="http://mp.weixin.qq.com/s?__biz=MjM5MDEyMDk4Mw==&mid=2650166025&idx=1&sn=50a22c1953f57db0240ca2d1363ba47a&scene=21#wechat_redirect">点击链接查看</a></p>
                     <p>Hexo(2)-部署博客及更新博文：<a href="https://zhuanlan.zhihu.com/p/22498474" target="_blank">点击链接查看</a></p>
@@ -20,7 +24,7 @@
                     <br>
                     <h3>Github+PythonAnywhere 系列</h3>
                     <p>效果如图：</p>
-                    <img src="{% static 'labpage/img/deploy2.png' %}" alt="" class="scan-img">
+                    <img src="{% static 'labpage/img/deploy2.png' %}" alt="Github+PythonAnywhere" class="scan-img">
                     <br><br>
                     <p>把你开发的网站免费发布到互联网上(1)：<a href="https://zhuanlan.zhihu.com/p/24650061" target="_blank">点击链接查看</a></p>
                     <p>把你开发的网站免费发布到互联网上(2)：<a target="_blank" href="http://mp.weixin.qq.com/s?__biz=MjM5MDEyMDk4Mw==&mid=2650166206&idx=1&sn=dc302be69e9007461b70b0f9d4cb7e2b&scene=0#wechat_redirect">点击链接查看</a></p>

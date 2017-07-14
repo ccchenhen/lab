@@ -1,4 +1,8 @@
 {% extends 'tools/base.html' %}
+{% block head %}
+    <meta name="keywords" content="tool, 在线工具, crossin, 编程教室">
+    <meta name="description" content="在线工具">
+{% endblock %}
 {% block index %}
     <p class="tools-index-text text-center h2">在线工具</p>
 
@@ -9,7 +13,7 @@
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                 <a class="tools-index-tools-item" href="{{ item.mark }}">
                     <span class="tools-index-tools-item-img">
-                        <img src="{{ item.image.url }}" alt="" class="tools-index-pic" >
+                        <img src="{{ item.image.url }}" alt="{{ item.instruction }}" class="tools-index-pic" >
                     </span>
                     <div class="tools-index-tools-item-text">
                         <div class="tools-index-tools-item-title">{{ item.title }}</div>

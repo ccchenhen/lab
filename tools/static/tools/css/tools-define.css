@@ -26,6 +26,9 @@ program : online tools
 .tools-tags:hover{
     text-decoration: none;
 }
+.tool-main{
+    min-height: 500px;
+}
 
 
 /*index.html*/
@@ -248,4 +251,13 @@ program : online tools
 .tools-jp-btn{
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+.lab-footer{
+    margin: 0 auto 20px;
+    width: 80%;
+}
+
+.lab-ft-img{
+    width: 20%;
 }
