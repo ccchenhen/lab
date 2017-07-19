@@ -40,6 +40,16 @@ program : online tools
 
 }
 
+.tools-index-textarea{
+    width: 100%;
+
+}
+.tools-index-ins{
+    width: 60%;
+    margin-top: 10px;
+    min-width: 320px;
+}
+
 .tools-row{
     margin-left: 10%;
     margin-right: 10%;
@@ -89,6 +99,10 @@ program : online tools
     width: 60px;
     height: 60px;
 }
+.tools-index-cmt{
+    margin: 200px auto 0;
+    width: 80%;
+}
 
 /*qrcode.html*/
 
@@ -119,8 +133,11 @@ program : online tools
 .tools-qrcode-img{
     width: 80%;
 }
-/*base64.html*/
 
+.tools-qrcode-cmt{
+    margin-top: 100px;
+}
+/*base64.html*/
 .tools-base64-area{
     width: 100%;
     /*height: 350px;*/
@@ -260,4 +277,42 @@ program : online tools
 
 .lab-ft-img{
     width: 20%;
+}
+
+
+
+/*评论框*/
+.tools-cmt-comment{
+    /*width: 80%;*/
+    margin-top:20px;
+    padding: 10px 20px;
+}
+.tools-cmt-div{
+    border: 3px solid #FAFAFA;
+    padding: 10px 10px;
+    background-color: #fff;
+    /*transition: ;*/
+}
+.tools-cmt-div:hover{
+    box-shadow: 5px 5px 10px #999999;
+}
+.tools-cmt-title{
+    border-bottom: 1px solid #5cb85c;
+    margin-bottom:10px;
+}
+
+.tools-cmt-name{
+    font-size: 20px;
+    color: #5cb85c;
+    margin-right: 10px;
+}
+
+.tools-cmt-date{
+    font-size: 13px;
+    color: #999999;
+}
+
+.tools-cmt-cont{
+    padding-top: 10px;
+    padding-left: 20px;
 }

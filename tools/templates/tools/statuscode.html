@@ -8,6 +8,12 @@
 
 {% block tool-page %}
     <p class="tools-index-text text-center h2">状态码查询</p>
+
+    <p class="center-block tools-index-ins">
+    HTTP状态码（HTTP Status Code）是用以表示网页服务器HTTP响应状态的3位数字代码。当浏览者访问一个网页时，浏览者的浏览器会向网页所在服务器发出请求。
+        当浏览器接收并显示网页前，此网页所在的服务器会返回一个包含HTTP状态码的信息头（server header）用以响应浏览器的请求。
+HTTP状态码的英文为HTTP Status Code。
+    </p>
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-2 col-sm-2 col-md-2"></div>
@@ -333,6 +339,11 @@
 
 
                 </div>
+                {#                评论框#}
+                <div class="tools-qrcode-cmt">
+                    {% include 'tools/comment.html' %}
+                </div>
+{#                评论框#}
             </div>
             <div class="col-lg-2 col-sm-2 col-md-2"></div>
         </div>

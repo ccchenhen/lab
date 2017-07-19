@@ -1,0 +1,62 @@
+
+{#    评论框#}
+<div class="tools-cmt-comment center-block" id="cmt-div">
+    <hr>
+    <textarea name="" cols="30" rows="5" class="tools-index-textarea" id="cmt-text"></textarea>
+    <button class="btn btn-primary" id="cmt-btn">发表评论</button>
+    <hr>
+    <input id="cmt-hide" value=" " hidden>
+{#{% include 'tools/comment-inner.html' %}#}
+{% if comments %}
+    {% for item in comments %}
+        {% include 'tools/comment-inner.html' %}
+    {% endfor %}
+
+{% endif %}
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#cmt-btn').click(function () {
+            var text = $('#cmt-text').val();
+{#            console.log(text);#}
+            var valid_text = is_valid(text);
+            var token = get_token();
+{#            console.log(token);#}
+            if (Boolean(valid_text)){
+            $.post('/tools/comment/',
+                {
+                    csrfmiddlewaretoken: '{{ csrf_token }}',
+                    'context':valid_text,
+                    'token': token
+                },function (data) {
+{#                    console.log(data);#}
+                    $('#cmt-hide').after(data);
+                    $('#cmt-text').val('');
+                }
+
+            )} else{
+                alert('评论不能为空')
+            }
+        })
+    })
+
+</script>
+
+<script>
+{#    检查输入是否有效#}
+    function is_valid(text) {
+        if (text.length > 0){
+        return text
+        }else {
+            return false
+        }
+    }
+{#    检查#}
+    function get_token() {
+        var url = window.location.href;
+        var token = url.split('/').slice(-2,-1);
+        return token[0]
+
+    }
+</script>

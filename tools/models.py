@@ -10,3 +10,19 @@ class Tool(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Comment(models.Model):
+
+    ip = models.CharField('IP地址', max_length=50)
+    content = models.TextField('评论内容')
+    token = models.CharField('页面标记', max_length=50, default='index')
+    likes = models.IntegerField('点赞数', default=0)
+    created_time = models.DateTimeField('创建时间', auto_now_add=True)
+    update_time = models.DateTimeField('最后编辑',auto_now=True)
+    is_alive = models.BooleanField('是否显示', default=True)
+
+    def __str__(self):
+        return self.content
+
+

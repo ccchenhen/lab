@@ -1,0 +1,22 @@
+{#        留言#}
+    <div class="tools-cmt-div">
+{#            用户名 留言时间#}
+        <div class="tools-cmt-title">
+            <span class="tools-cmt-name">{{ item.ip }}</span>
+            <span class="tools-cmt-date">{{ item.created_time }}</span>
+{#            <span class="pull-right tools-cmt-like">#}
+{#            <span class="glyphicon glyphicon-heart"></span>#}
+{#                {{ item.likes }}#}
+{#            </span>#}
+
+
+        </div>
+{#            正文#}
+        <div class="tools-cmt-cont">
+            <p>
+                {{ item.content }}
+            </p>
+        </div>
+{#            状态#}
+
+    </div>

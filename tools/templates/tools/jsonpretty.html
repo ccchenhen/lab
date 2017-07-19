@@ -8,7 +8,11 @@
 {% block tool-page %}
 
     <p class="tools-index-text text-center h2">JSON字符串美化</p>
-
+    <p class="tools-index-ins center-block">
+    JSON(JavaScript Object Notation, JS 对象标记) 是一种轻量级的数据交换格式。它基于 ECMAScript (w3c制定的js规范)的一个子集，
+        采用完全独立于编程语言的文本格式来存储和表示数据。简洁和清晰的层次结构使得 JSON 成为理想的数据交换语言。
+        易于人阅读和编写，同时也易于机器解析和生成，并有效地提升网络传输效率。
+    </p>
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-2 col-sm-2 col-md-2"></div>
@@ -19,6 +23,11 @@
                     <button class="btn btn-default tools-jp-btn tools-btn">美化</button>
                     <pre id="text2" class="tools-base64-text hidden" ></pre>
                 </div>
+                {#                评论框#}
+                <div class="tools-qrcode-cmt">
+                    {% include 'tools/comment.html' %}
+                </div>
+{#                评论框#}
             </div>
             <div class="col-lg-2 col-sm-2 col-md-2"></div>
         </div>

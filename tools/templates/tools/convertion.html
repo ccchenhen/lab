@@ -6,6 +6,9 @@
 {% block tool-page %}
     <p class="tools-index-text text-center h2">在线进制转换</p>
 
+    <p class="tools-index-ins center-block">
+        进制也就是进位制，是人们规定的一种进位方法。 对于任何一种进制---X进制，就表示某一位置上的数运算时是逢X进一位。 十进制是逢十进一，十六进制是逢十六进一，二进制就是逢二进一，以此类推，x进制就是逢x进位。
+    </p>
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-2 col-md-2 col-sm-2"></div>
@@ -76,6 +79,13 @@
                         </div>
                     </div>
                 </div>
+
+                {#                评论框#}
+                <div class="tools-qrcode-cmt">
+                    {% include 'tools/comment.html' %}
+                </div>
+{#                评论框#}
+
             </div>
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
         </div>

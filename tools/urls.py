@@ -13,6 +13,7 @@ urlpatterns = [
     url('^reg/$', views.reg, name='reg'),
     url('^json/$', views.tojson, name='tojson'),
     url('^cron/$', views.cron, name='cron'),
-    url('^sc/$', views.statuscode, name='statuscode')
+    url('^sc/$', views.statuscode, name='statuscode'),
+    url('comment/$', views.comment, name='comment')
 
 ]

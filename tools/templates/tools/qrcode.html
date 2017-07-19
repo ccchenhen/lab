@@ -7,6 +7,10 @@
 {#    二维码生成#}
     <p class="tools-index-text text-center h2">在线二维码生成</p>
 
+
+    <p class="tools-index-ins center-block">
+    二维条码/二维码（2-dimensional bar code）是用某种特定的几何图形按一定规律在平面（二维方向上）分布的黑白相间的图形记录数据符号信息的；在代码编制上巧妙地利用构成计算机内部逻辑基础的“0”、“1”比特流的概念，使用若干个与二进制相对应的几何形体来表示文字数值信息，通过图象输入设备或光电扫描设备自动识读以实现信息自动处理：它具有条码技术的一些共性：每种码制有其特定的字符集；每个字符占有一定的宽度；具有一定的校验功能等。同时还具有对不同行的信息自动识别功能、及处理图形旋转变化点。
+    </p>
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-2 col-sm-2 col-md-2"></div>
@@ -32,6 +36,13 @@
                         </div>
                     </div>
                 </div>
+
+{#                评论框#}
+                <div class="tools-qrcode-cmt">
+                    {% include 'tools/comment.html' %}
+                </div>
+{#                评论框#}
+
             </div>
             <div class="col-lg-2 col-sm-2 col-md-2"></div>
         </div>
@@ -40,7 +51,7 @@
     <script>
         $(document).ready(function(){
             $('#qrbtn').click(function () {
-                alert('ssss');
+{#                alert('ssss');#}
                 var text = $('#qrtext').val();
                 var rawurl = 'http://qr.topscan.com/api.php?text=';
                 var picaddr = $('#qraddr').val();
