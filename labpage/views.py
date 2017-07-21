@@ -1,7 +1,10 @@
 from django.shortcuts import render
 from .models import Project
+from django.core.mail import send_mail
 
 # Create your views here.
+import logging
+logger = logging.getLogger(__name__)
 
 # 首页
 def index(request):
@@ -10,7 +13,6 @@ def index(request):
         'projects': projects
     }
     return render(request, 'labpage/index.html', content)
-
 
 # 皮皮虾
 def ppx(request):

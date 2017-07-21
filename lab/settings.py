@@ -24,12 +24,74 @@ SECRET_KEY = 'n88g$(g!t&huvbh4x8o-#(mo*1i*_izoryjpix*#s1dbtg4_5w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+# DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'lab.crossincode.com']
 
+
+# email settings
+ADMINS = [
+    ('zhouxin', 'zhouxin576@gmail.com'),
+
+]
+SEND_BROKEN_LINK_EMAILS = True
+MANAGERS = ADMINS
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.qq.com'  # QQ邮箱SMTP服务器(邮箱需要开通SMTP服务)
+# EMAIL_PORT = 25  # QQ邮箱SMTP服务端口
+EMAIL_HOST_USER = '782744680@qq.com'  # 我的邮箱帐号
+EMAIL_HOST_PASSWORD = 'vatojsxjswzvbfhe'  # 授权码
+EMAIL_SUBJECT_PREFIX = '实验室网站'  # 为邮件标题的前缀,默认是'[django]'
+EMAIL_USE_TLS = True  # 开启安全链接
+DEFAULT_FROM_EMAIL = SERVER_EMAIL = EMAIL_HOST_USER  # 设置发件人
+
+# logging settings
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': True,
+    'formatters': {
+       'standard': {
+            'format': '%(asctime)s [%(threadName)s:%(thread)d] [%(name)s:%(lineno)d] [%(module)s:%(funcName)s] [%(levelname)s]- %(message)s'}
+    },
+
+    'handlers': {
+        'mail_admins': {
+            'level': 'WARNING',
+            'class': 'django.utils.log.AdminEmailHandler',
+            # 'filters': ['require_debug_false'],
+            # 'filters': [],
+            # 'include_html': True,
+        },
+        'file': {
+            'level':'DEBUG',
+            'class':'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(BASE_DIR, "config", 'debug.log'),
+            'maxBytes':1024*1024*5,
+            'backupCount': 5,
+            'formatter':'standard',
+        },
+        'console':{
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'standard',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': 'INFO',
+            'propagate': False
+        },
+        'django.request': {
+            'handlers': ['file','mail_admins'],
+            'level': 'WARNING',
+            'propagate': True,
+        },
+    }
+}
 
 # Application definition
-
 INSTALLED_APPS = [
     'labpage.apps.LabpageConfig',
     'tools.apps.ToolsConfig',
