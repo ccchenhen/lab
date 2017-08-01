@@ -5,7 +5,7 @@
 # 从 豆瓣 api 获取当前上映的电影
 
 import os, django
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "lab.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "lab.server_settings")
 django.setup()
 
 from movie.models import Movie

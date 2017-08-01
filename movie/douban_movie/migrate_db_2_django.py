@@ -5,7 +5,7 @@
 # 将之前在 movie_ticket 项目中产生的数据迁移到 django 数据库中
 
 import os, django
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "lab.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "lab.server_settings")
 django.setup()
 
 import Levenshtein
