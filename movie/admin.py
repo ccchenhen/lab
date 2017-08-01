@@ -11,7 +11,6 @@ class CinemaUrlResource(resources.ModelResource):
     class Meta:
         model = CinemaUrl
 
-
 @admin.register(Movie)
 class MovieAdmin(admin.ModelAdmin):
     ordering = ('created_time', )

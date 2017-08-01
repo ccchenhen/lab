@@ -11,7 +11,10 @@ from movie.movie_tickets.spiders.time import Time
 
 # 首页
 def index(request):
-    cover = Cover.objects.filter(is_alive=True)[0]
+    cover = Cover.objects.filter(is_alive=True)
+    if cover:
+        cover = cover[0]
+        print('cover ok')
     movies = Movie.objects.filter(is_in_theater=True).filter(is_top=False)
     top_movie = Movie.objects.get(is_top=True)
     content = {
