@@ -1,10 +1,16 @@
 from django.contrib import admin
 from .models import CinemaUrl, Cover, Movie
-# Register your models here.
+from import_export import resources
+from import_export.admin import ImportExportModelAdmin
 
 admin.site.register(Cover)
 
 # admin.site.register()
+
+class CinemaUrlResource(resources.ModelResource):
+    class Meta:
+        model = CinemaUrl
+
 
 @admin.register(Movie)
 class MovieAdmin(admin.ModelAdmin):
@@ -14,6 +20,6 @@ class MovieAdmin(admin.ModelAdmin):
 
 
 @admin.register(CinemaUrl)
-class CinemaAdmin(admin.ModelAdmin):
+class CinemaAdmin(ImportExportModelAdmin):
+    resource_class = CinemaUrlResource
     list_display = ('city', 'district', 'location', 'cinema_name', 'view_count', 'code')
-
