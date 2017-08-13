@@ -5,6 +5,10 @@
 # 从 豆瓣 api 获取当前上映的电影
 
 import os, django
+import sys
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.append(BASE_DIR)
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "lab.server_settings")
 django.setup()
 

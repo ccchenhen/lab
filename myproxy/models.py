@@ -57,7 +57,3 @@ class IpAddr(models.Model):
 
     def __str__(self):
         return self.addr
-
-
-
-

@@ -7,6 +7,7 @@
 {% endblock %}
 
 {% block body %}
+{% load static %}
 {#导航条#}
     <nav class="navbar navbar-default lab-navbar">
         <div class="container-fluid">
@@ -95,8 +96,8 @@
             </div>
             <div class="col-md-2"></div>
         </div>
-    </div>
 
+    <footer class="movie-ft"><p>苏ICP备15063769号</p></footer>
     <script>
 // {#    选择区/县，发送到后台，提取出电影院#}
 $(document).ready(function () {
@@ -171,10 +172,10 @@ $(document).on('click', '.date_', function () {
 
 });
     </script>
-    <script>
 
-    </script>
-    {% load static %}
+
+
+
     <script type="application/javascript" src="{% static 'movie/js/city_alpha.js' %}"></script>
     <script src="{% static 'movie/js/districts.js' %}" type="application/javascript"></script>
     <script type="application/javascript" src="{% static 'movie/js/formatstr.js' %}"></script>
