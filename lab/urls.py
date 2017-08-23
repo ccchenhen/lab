@@ -22,6 +22,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'tools/', include('tools.urls', namespace='tools', app_name='tools')),
+    url(r'rhyme/', include('rhyme.urls', namespace='rhyme', app_name='rhyme')),
     url(r'scan/', include('mycode.urls', namespace='mycode', app_name='mycode')),
     url(r'proxy/', include('myproxy.urls', namespace='myproxy', app_name='myproxy')),
     url(r'movie/', include('movie.urls', namespace='movie', app_name='movie')),

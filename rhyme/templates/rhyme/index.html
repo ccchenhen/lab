@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crossin的编程教室-寻找押韵词汇</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'rhyme/css/rhyme.css' %}">
+    <link rel="stylesheet" href="{% static 'rhyme/css/bootstrap.css' %}">
+    <script type="application/javascript" src="{% static 'rhyme/js/jquery-3.2.1.js' %}"></script>
+    <script type="application/javascript" src="{% static 'rhyme/js/bootstrap.js' %}"></script>
+    <script type="application/javascript" src="{% static 'rhyme/js/echarts.js' %}"></script>
+    <script type="application/javascript" src="{% static 'rhyme/js/echarts-wordcloud.min.js' %}"></script>
+    <script type="application/javascript" src="{% static 'rhyme/js/rhyme.js' %}"></script>
+
+
+</head>
+<body>
+
+    {#        模态框#}
+        <div class="modal" tabindex="-1" role="dialog" id="rhymemodal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title">说明</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p class="h2">项目说明: </p>
+                        <p>本项目收集中国有嘻哈主要歌手(红花会/GAI/bridge/jonyj)等的歌曲400余首,使用 jieba 分词提取出超过 3000 个押韵词汇</p>
+                        <p class="h2">使用说明</p>
+                        <p>在页面左侧搜索框输入任意词汇,程序会自动从数据库中检索具有相同韵脚的词汇,生成一张词云图</p>
+                        <p>现在关闭窗口点击 Go 试试看</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+{#                        <button type="button" class="btn btn-primary">Save changes</button>#}
+                      </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    <div class="rhyme-bg" style="background-image: url('{% static "rhyme/img/maxresdefault.jpg" %}')">
+        <div class="rhyme-top"></div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3 col-sm-12 col-xs-12">
+                    <div class="rhyme-search">
+                        <div class="rhyme-search-bg"></div>
+                        <div class="rhyme-search-d">
+                            <span><img src="{% static 'rhyme/img/hiphop1.jpg' %}" alt="" class="rhyme-search-img"></span>
+                            <input type="text" class="rhyme-input" placeholder="兄弟" id="ipt" value="兄弟">
+                            <button class="rhyme-search-bt" id="search">Go</button>
+
+{#                          搜索历史  #}
+
+                        </div>
+                        <ul class="nav nav-pills rhyme-his" id="rhymehistory">
+                            <li class="disabled"><a href="" style="color: #fff">搜索历史:</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="col-md-9">
+                    <div class="rhyme-display-container">
+                            <div class="rhyme-display-chart" id="chart"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+{#        <div class="rhyme-search center-block">#}
+{#            <div class="rhyme-search-bg"></div>#}
+{#            <div>#}
+{#                <input type="text" >#}
+{#            </div>#}
+{##}
+{#        </div>#}
+    </div>
+    <script>
+        $('#rhymemodal').modal('show')
+    </script>
+
+</body>
+</html>

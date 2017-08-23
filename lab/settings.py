@@ -98,6 +98,7 @@ INSTALLED_APPS = [
     'mycode.apps.MycodeConfig',
     'myproxy.apps.MyproxyConfig',
     'movie.apps.MovieConfig',
+    'rhyme.apps.RhymeConfig',
     'import_export',
     'django.contrib.admin',
     'django.contrib.auth',

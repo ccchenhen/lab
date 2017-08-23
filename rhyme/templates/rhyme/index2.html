@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crossin的编程教室-寻找押韵词汇</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'rhyme/css/rhyme.css' %}">
+{#    <link rel="stylesheet" href="{% static 'rhyme/css/bootstrap.css' %}">#}
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+{#    <script type="application/javascript" src="{% static 'rhyme/js/jquery-3.2.1.js' %}"></script>#}
+{#    <script type="application/javascript" src="{% static 'rhyme/js/bootstrap.js' %}"></script>#}
+
+
+</head>
+<body>
+
+    {#        导航#}
+
+    <div class="jumbotron rhyme-junmb" style='background-image: url("{% static 'rhyme/img/wall3.png' %}")'>
+
+{#        页头#}
+        <div class="rhyme-junm-head">
+            <span><a href="">crossin的编程教室</a></span> | <span><a href="">实验室</a></span>
+        </div>
+
+{#        文字说明#}
+        <div class="rhyme-text">
+            <h1>Hello, Homie</h1>
+            <p>检索双押/三押词汇</p>
+            <p>现在点击 Freestyle 试试看</p>
+        </div>
+
+        {#        搜索框#}
+        <div class="rhyme-center">
+            <div class="rhyme-search-d">
+                <span><img src="{% static 'rhyme/img/hiphop1.jpg' %}" alt="" class="rhyme-search-img"></span>
+                <input type="text" class="rhyme-input" placeholder="兄弟" id="ipt" value="兄弟">
+                <button class="rhyme-search-bt" id="search">
+                    Freestyle
+                </button>
+            </div>
+            <ul class="nav nav-pills rhyme-his" id="rhymehistory">
+            <li class="disabled"><a href="" style="color: #fff">搜索历史:</a></li>
+        </ul>
+        </div>
+    </div>
+
+    <div class="rhyme-bg">
+
+{#        显示部分#}
+        <div class="rhyme-display-a center-block">
+            <div class="container-fluid">
+                <div class="row rhyme-display-bg-a" id="rhyme-item-con">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="application/javascript" src="{% static 'rhyme/js/rhyme.js' %}"></script>
+    <script type="application/javascript" src="{% static 'rhyme/js/formatstr.js' %}"></script>
+
+</body>
+</html>
