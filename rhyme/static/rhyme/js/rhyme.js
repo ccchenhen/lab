@@ -4,12 +4,14 @@
 
 $(document).ready(function () {
     var words = {};
+    // window.added = [];
 
     $.ajax({
         url: '/rhyme/get?word=' + '兄弟',
         method: 'GET',
         success: function (data) {
             words['兄弟'] = data['兄弟'];
+            // added.push('兄弟')
             // set_chart('兄弟', words['兄弟'])
         }
     });
@@ -30,14 +32,14 @@ $(document).ready(function () {
                         alert('未查询到结果')
 
                     } else {
-                        add_his(ipt_w);
+                        // add_his(ipt_w);
                         // set_chart(ipt_w, cur_dt)
                         set_rhyme(cur_dt, cur_dt[0][1])
                     }
                 }
             })
         } else {
-            add_his(ipt_w);
+            // add_his(ipt_w);
             set_rhyme(cur_dt, cur_dt[0][1])
             // set_chart(ipt_w, cur_dt)
         }
@@ -107,17 +109,23 @@ function set_chart (title, cur_dt) {
   mychart.setOption(option)
 }
 
-function add_his(his_word) {
+// function add_his(his_word) {
+//
+//     if (!(his_word in added) && (added.length < 10)){
+//
+//         var add_str = '<li><a href="javascript:void(0);" class="history">'+ his_word +'</a></li>';
+//         $('#rhymehistory').append(add_str)
+//     }
+//
+//
+// }
 
-    var add_str = '<li><a href="javascript:void(0);" class="history">'+ his_word +'</a></li>';
-    $('#rhymehistory').append(add_str)
 
-}
 
 function set_rhyme(dt, max_c) {
 
     var prefix = '<div class="col-md-4 col-sm-12 col-xs-12">\
-                        <div class="rhyme-row-container" id="div0">\
+                        <div class="rhyme-row-container">\
                             <div class="rhyme-item">\
                         <div class="rhyme-item-text">\
                             {0}\
