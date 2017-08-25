@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crossin的编程教室-Python必背单词整理</title>
+    {% load static %}
+{#    <link rel="stylesheet" href="{% static 'recite/css/bootstrap.css' %}">#}
+
+{#    <script type="application/javascript" src="{% static 'recite/js/jquery-3.2.1.js' %}"></script>#}
+{#    <script type="application/javascript" src="{% static 'recite/js/bootstrap.js' %}"></script>#}
+
+
+</head>
+<body>
+
+
+    <div id="wrapper">
+        <div class="overlay"></div>
+
+        <!-- Sidebar -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+            <ul class="nav sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="http://crossincode.com/">
+                       编程教室
+                    </a>
+                </li>
+                <li>
+                    <a href="http://lab.crossincode.com/">实验室</a>
+                </li>
+                <li>
+                    <a href="http://lab.crossincode.com/recite/">背单词首页</a>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">选择单元<span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+{#
+                  </ul>
+                </li>
+
+            </ul>
+        </nav>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+          <button type="button" class="hamburger is-closed animated fadeInLeft" data-toggle="offcanvas">
+            <span class="hamb-top"></span>
+            <span class="hamb-middle"></span>
+            <span class="hamb-bottom"></span>
+          </button>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="recite-content">
+                            <h1>背单词,永不放弃</h1>
+                            <hr>
+                            <p>
+                                由Crossin的编程教室整理，从20余本Python学习书籍、10余部Python常用库文档、github-awesome-python项目下近400个项目的readme说明以及stackoverflow下Python及常用库的问答topics 400+回答等资源中，整理出词频较高的单词，供Python初学者学习使用。
+                            </p>
+                            <br><br>
+                            <p><strong>点击左上角按钮选择学习单元</strong></p>
+                            <p>或者</p>
+                            <br>
+                            <button class="chapter btn btn-success btn-lg" value="1">现在开始</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'recite/css/recite.css' %}">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="application/javascript" src="{% static 'recite/js/recite.js' %}"></script>
+    <script type="application/javascript" src="{% static 'recite/js/formatstr.js' %}"></script>
+</body>
+</html>

@@ -21,6 +21,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'recite/', include('recite.urls', namespace='recite', app_name='recite')),
     url(r'tools/', include('tools.urls', namespace='tools', app_name='tools')),
     url(r'rhyme/', include('rhyme.urls', namespace='rhyme', app_name='rhyme')),
     url(r'scan/', include('mycode.urls', namespace='mycode', app_name='mycode')),
