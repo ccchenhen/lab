@@ -4,7 +4,7 @@ import logging
 from datetime import datetime
 import bs4
 from .general_methods import GeneralMethods
-
+import time
 
 gm = GeneralMethods()
 
@@ -16,15 +16,16 @@ headers_general = {
 
 
 def ip181():
+
     url = 'http://www.ip181.com/'
     content = gm.req_url(url,headers_general)
     if not content:
-        try:
-            content = gm.get_source_by_selenium(url)
-
-        except Exception as e:
-            print(e)
-            return None
+        # try:
+        #     content = gm.get_source_by_selenium(url)
+        #
+        # except Exception as e:
+        #     print(e)
+        return None
 
     content = content.encode('ISO-8859-1')
 
@@ -56,3 +57,4 @@ def ip181():
     except:
         print('时间 %s ,请求 %s 出错'%(datetime.now(),url))
         return None
+

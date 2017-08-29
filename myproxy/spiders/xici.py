@@ -22,13 +22,14 @@ def fetch_xici():
             'http://www.xicidaili.com/wn/',
             'http://www.xicidaili.com/wt/']
     for url in urls:
+        # print(url)
         content = gm.req_url(url, headers_general)
         if not content:
-            try:
-                content = gm.get_source_by_selenium(url)
-            except Exception as e:
-                print(e)
-                return None
+            # try:
+            #     content = gm.get_source_by_selenium(url)
+            # except Exception as e:
+            #     print(e)
+            return None
 
         try:
             soup = bs4.BeautifulSoup(content, 'lxml')

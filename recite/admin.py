@@ -31,4 +31,5 @@ class ExpandResource(resources.ModelResource):
 @admin.register(Expand)
 class ExpandAdmin(ImportExportModelAdmin):
     resource_class = ExpandResource
-    list_display = ('belong', 'explansion')
+    list_display = ('belong', 'explansion', 'provider', 'is_alive')
+    list_editable = ('is_alive', )

@@ -128,7 +128,6 @@ def get(request):
             except:
                 pass
 
-
         data = {}
         ip_list = []
         count = 0

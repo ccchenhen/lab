@@ -109,8 +109,9 @@ $(document).ready(function () {
 
   // 提交自定义解释
   $(document).on('click', '#recite-btn', function () {
-      var ipt = $.trim($('#recite-ipt').val());
+      var ipt = $.trim($('#recite-tt').val());
       var wid = $('.wid').text();
+      // console.log(ipt, wid);
       if (ipt.length < 1){
         alert('恕我不能接受空白解释')
       } else {
@@ -120,7 +121,7 @@ $(document).ready(function () {
              success: function (status) {
                  if (status['code'] === 1){
                    $('#recite-not').hide();
-                   $('#recite-ipt').val('');
+                   $('#recite-tt').val('');
                    $('#recite-self').append('<p>{0}</p>'.format(ipt))
                  } else {
                    alert('异常错误,请稍后再试')
@@ -161,24 +162,26 @@ function startwords (word, chap) {
                 <p>词典解释:</p>\
                 <p>{3}</p>\
                 <br>\
-                <p>自定义解释:</p>\
+                <p>用户补充:</p>\
                 <div id="recite-self">\
                 {4}\
                 </div>\
                 <br>\
-                <div class="input-group">\
-                  <input type="text" class="form-control" placeholder="自定义解释..." id="recite-ipt">\
-                  <span class="input-group-btn">\
-                    <button class="btn btn-success" type="button" id="recite-btn">确认提交</button>\
-                  </span>\
-                </div>\
                 <br>\
                 <hr>\
+                <p style="font-size: 14px">解释的不太好? <a href="javascript:void(0);" data-toggle="modal" data-target="#myModal">提交补充</a></p>\
                 <div class="recite-btn-group">\
                 <button class="btn btn-success back btn-lg">上一个</button>\
                 <button class="btn btn-success pull-right next btn-lg">下一个</button>\
                 </div>';
 
+
+                    // <div class="input-group">\
+                //   <input type="text" class="form-control" placeholder="自定义解释..." id="recite-ipt">\
+                //   <span class="input-group-btn">\
+                //     <button class="btn btn-success" type="button" id="recite-btn">确认提交</button>\
+                //   </span>\
+                // </div>\
     var w = word['word'];
     var wid = word['id'];
     var exp = word['explansion'];
@@ -192,7 +195,7 @@ function startwords (word, chap) {
         exp_str += exp_tem.format(expand[i]['explansion'])
       }
     } else {
-      exp_str = '<p id="recite-not">{0}</p>'.format('还没有自定义解释,自定义添加一个?')
+      exp_str = '<p id="recite-not">{0} <a href="javascript:void(0);" data-toggle="modal" data-target="#myModal">{1}</a></p>'.format('还没有自定义解释,','自定义添加一个?')
     }
 
     prefix = prefix.format(w, chap, pho, exp, exp_str, wid);

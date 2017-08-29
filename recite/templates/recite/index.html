@@ -56,11 +56,14 @@
                         <div class="recite-content">
                             <h1>背单词,永不放弃</h1>
                             <hr>
-                            <p>
-                                由Crossin的编程教室整理，从20余本Python学习书籍、10余部Python常用库文档、github-awesome-python项目下近400个项目的readme说明以及stackoverflow下Python及常用库的问答topics 400+回答等资源中，整理出词频较高的单词，供Python初学者学习使用。
+                            <p style="text-align: justify">
+                                由Crossin的编程教室整理，从20余本Python学习书籍、10余部Python常用库文档、
+                                github-awesome-python项目下近400个项目的readme说明以及stackoverflow下Python及常用库的问答topics 400+回答等资源中，
+                                整理出词频较高的单词，供Python初学者学习使用。
                             </p>
-                            <br><br>
-                            <p><strong>点击左上角按钮选择学习单元</strong></p>
+                            <p>在使用过程中,欢迎提交单词补充解释.</p>
+                            <br>
+                            <p>点击左上角按钮选择学习单元</p>
                             <p>或者</p>
                             <br>
                             <button class="chapter btn btn-success btn-lg" value="1">现在开始</button>
@@ -74,6 +77,28 @@
 
     </div>
     <!-- /#wrapper -->
+     <!-- /#modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel" style="color: black">增加新的解释</h4>
+          </div>
+          <div class="modal-body">
+              <p>补充额外解释:</p>
+              <br>
+              <textarea name="" id="recite-tt" rows="5" class="recite-modal-ipt"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="recite-btn" data-dismiss="modal">保存并提交</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     <!-- /#modal-end -->
 
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'recite/css/recite.css' %}">

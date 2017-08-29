@@ -39,4 +39,5 @@ class Expand(models.Model):
     # 扩展解释
     belong = models.ForeignKey('Word', verbose_name='所属词汇', related_name='expand', on_delete=models.CASCADE)
     explansion = models.TextField('解释')
+    provider = models.GenericIPAddressField('提供者的IP', default='0.0.0.0')
     is_alive = models.BooleanField('状态', default=True)

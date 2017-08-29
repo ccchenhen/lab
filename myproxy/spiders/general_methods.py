@@ -9,7 +9,6 @@ from ..utils.checkip import CheckIp
 # 初始化
 checkip = CheckIp()
 
-
 class GeneralMethods():
 
     def __init__(self):
@@ -96,14 +95,16 @@ class GeneralMethods():
             assert req.status_code == 200
         except Exception as e:
 
-            if rep_count == 1:
-                # logging.warning('url：%s 第一次报错，已经跳转重新获取 Cookie,报错信息：%s' %(url,e))
-                cookie = self.get_cookie_by_selenium(url)
-                headers['Cookie'] = cookie
-                return self.req_url(url, headers, rep_count=2)
-            else:
-                print('url：%s 第二次报错，报错信息：%s，已转为 selenium 获取页面信息' %(url,e))
-                return None
+            # if rep_count == 1:
+            #     # logging.warning('url：%s 第一次报错，已经跳转重新获取 Cookie,报错信息：%s' %(url,e))
+            #     cookie = self.get_cookie_by_selenium(url)
+            #     headers['Cookie'] = cookie
+            #     return self.req_url(url, headers, rep_count=2)
+            # else:
+            print('url：%s 报错，报错信息：%s' %(url,e))
+            return None
 
         else:
             return req.text
+
+    

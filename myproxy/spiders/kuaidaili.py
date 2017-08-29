@@ -33,12 +33,13 @@ def req_url_kuai(url, headers, count=1):
         req = requests.get(url, headers=headers, timeout=2)
 
     except:
-        if count == 3:
-            print('多次请求 url: %s 失败,转为 selenium 直接获取'%(url))
-            return None
-        time.sleep(2)
-        count += 1
-        return req_url_kuai(url, headers, count)
+        # if count == 3:
+        #     print('多次请求 url: %s 失败,转为 selenium 直接获取'%(url))
+        #     return None
+        # time.sleep(2)
+        # count += 1
+        # return req_url_kuai(url, headers, count)
+        return
 
     source = req.text
     if req.status_code == 521:
@@ -71,14 +72,14 @@ def fetch_k1():
     KD_IP = []
 
     for url in urls:
-
+        print(url)
         content = req_url_kuai(url, headers_kuai)
         if not content:
-            try:
-                content = gm.get_source_by_selenium(url)
-            except Exception as e:
-                print(e)
-                return None
+            # try:
+            #     content = gm.get_source_by_selenium(url)
+            # except Exception as e:
+            #     print(e)
+            return None
         try:
             soup = bs4.BeautifulSoup(content,'lxml')
             soup_tb = soup.find('tbody')

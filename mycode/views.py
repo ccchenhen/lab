@@ -26,6 +26,8 @@ def verify_user(request):
         code = request.POST.get('code')
         encrypteddata = request.POST.get('encrypteddata')
         iv = request.POST.get('iv')
+        if not all([code, encrypteddata, iv]):
+            return JsonResponse({'error':1})
 
         # 检查用户
         res = checkdata(code, encrypteddata, iv)
@@ -96,6 +98,8 @@ def checkqr(request):
         qrcode = request.POST.get('code')
         cookie = request.POST.get('cookie')
         dir_name = request.POST.get('dir')
+        if not all([qrcode, cookie, dir_name]):
+            return JsonResponse({'error': 1})
 
         # 验证用户
         profiles = Profile.objects.filter(cookie=cookie)
@@ -144,6 +148,9 @@ def datain(request):
         remarks = request.POST.get('remarks', None)
         cookie = request.POST.get('cookie')
         dir = request.POST.get('dir')
+
+        if not all([qrcode, name, remarks, cookie, dir]):
+            return JsonResponse({'code': 1})
 
         # 检查用户
         profiles = Profile.objects.filter(cookie=cookie)
@@ -218,6 +225,9 @@ def dataout(request):
         cookie = request.POST.get('cookie')
         dir_name = request.POST.get('dir')
 
+        if not all([qrcode, cookie, dir_name]):
+            return JsonResponse({'code': 1})
+
         profiles = Profile.objects.filter(cookie=cookie)
         if len(profiles) != 1:
             data = {'error': '用户错误'}
@@ -276,8 +286,9 @@ def query(request):
     # user = request.user
     if request.method == 'POST':
         data = {}
-        cookie = request.POST.get('cookie')
-
+        cookie = request.POST.get('cookie', None)
+        if not cookie:
+            return JsonResponse({'error': 1})
         profiles = Profile.objects.filter(cookie=cookie)
         if len(profiles) != 1:
             data = {'error': '用户错误'}
@@ -317,6 +328,8 @@ def builddir(request):
         cookie = request.POST.get('cookie')
         dirname = request.POST.get('dirname')
 
+        if not cookie and not  dirname:
+            return JsonResponse({'code': 1})
         profiles = Profile.objects.filter(cookie=cookie)
         if len(profiles) != 1:
             data = {'error': '用户错误'}

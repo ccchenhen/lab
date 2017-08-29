@@ -12,3 +12,15 @@
 - [IP代理池](http://lab.crossincode.com/proxy/)
 - [扫码小程序](http://lab.crossincode.com/minaqr/)
 - [博客部署](http://lab.crossincode.com/deploy/)
+
+#### 2017.8.28
+
+已添加以下项目
+
+- [电影票比价](http://lab.crossincode.com/movie/)
+- [检索押韵词汇](http://lab.crossincode.com/movie/)
+- [Python职位分析](http://lab.crossincode.com/offer/)
+- [Python高频词汇](http://lab.crossincode.com/recite/)
+
+
+ 

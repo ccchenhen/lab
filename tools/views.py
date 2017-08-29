@@ -100,7 +100,7 @@ def comment(request):
         content = request.POST.get('context')
         content = sub_words(content)
         ip = request.META['REMOTE_ADDR']
-        print(token, content, ip)
+        # print(token, content, ip)
         cmt_ins = Comment.objects.create(
             ip=ip,
             content=content,

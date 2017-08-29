@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import  HttpResponse, JsonResponse
+from django.http import  HttpResponse, JsonResponse, Http404
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
@@ -33,6 +33,10 @@ def addExp(request):
         ipt = request.GET.get('text', None)
         wid = request.GET.get('wid', None)
 
+        if not all([ipt, wid]):
+            return Http404('not enough parameters')
+
+        provider = request.META['REMOTE_ADDR']
         if not ipt or len(ipt) < 1:
             return JsonResponse({'code':0})
         if not wid or (not re.match('^\d+$', wid)):
@@ -45,7 +49,8 @@ def addExp(request):
 
         Expand.objects.create(
             belong=belong,
-            explansion=ipt
+            explansion=ipt,
+            provider=provider
         )
 
         return JsonResponse({'code': 1})
