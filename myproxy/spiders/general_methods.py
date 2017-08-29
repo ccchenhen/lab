@@ -3,6 +3,8 @@ import requests
 import time
 from ..models import Proxy
 from selenium import webdriver
+import time
+from functools import wraps
 
 from ..utils.checkip import CheckIp
 
@@ -106,5 +108,18 @@ class GeneralMethods():
 
         else:
             return req.text
+
+#
+    def printprocesstime(self, func):
+        @wraps(func)
+        def wrap():
+
+            print('start {0} at {1}'.format(func.__name__, time.ctime()))
+
+            func()
+
+            print('end {0} at {1}'.format(func.__name__, time.ctime()))
+
+        return wrap
 
     

@@ -62,6 +62,7 @@ def req_url_kuai(url, headers, count=1):
 
 
 # 下载 快代理 网站IP
+@gm.printprocesstime
 def fetch_k1():
 
     urls = ['http://www.kuaidaili.com/free/inha/',

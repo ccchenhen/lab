@@ -14,7 +14,7 @@ IP181 = ip181.ip181
 
 # 多线程
 funcs = [XICI,SIXSIX,KUAIDAILI,IP181]
-hour = datetime.datetime.today().hour + 1
+hour = datetime.datetime.today().hour + 3
 
 def crwal():
     '''

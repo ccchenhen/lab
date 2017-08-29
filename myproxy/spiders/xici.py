@@ -15,6 +15,7 @@ headers_general = {
 # 本次爬取内查重
 XICI_IP = []
 # 西刺代理
+@gm.printprocesstime
 def fetch_xici():
     '''从 西刺 网下载 ip'''
     urls = ['http://www.xicidaili.com/wt',

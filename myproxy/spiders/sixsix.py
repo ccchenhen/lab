@@ -22,6 +22,7 @@ headers_66 = {
         'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
             }
 
+@gm.printprocesstime
 def fetch_ss():
     '''取得 66 代理网所有分地区的 url，并传入 fetch_ss_1 处理存入数据'''
     url = 'http://www.66ip.cn'
@@ -50,6 +51,7 @@ def fetch_ss():
 
 
 SS_IP = []
+
 
 def fetch_ss_1(url):
     '''传入某一地区的 url,存储数据'''
