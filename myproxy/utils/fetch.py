@@ -1,8 +1,6 @@
 #-*- coding:utf-8 -*-
 
-import threading
 import datetime
-import time
 from ..spiders import xici, sixsix, kuaidaili, ip181
 
 
@@ -14,9 +12,9 @@ IP181 = ip181.ip181
 
 # 多线程
 funcs = [XICI,SIXSIX,KUAIDAILI,IP181]
-hour = datetime.datetime.today().hour + 3
+hour = datetime.datetime.today().hour
 
-def crwal():
+def crawl():
     '''
     print('crawling')
 
@@ -31,11 +29,11 @@ def crwal():
 
     print('finished')
     '''
-    print(time.ctime())
+    # print(time.ctime())
     nt = nowturn(funcs, hour)
     nfunc = funcs[nt]
     nfunc()
-    print(time.ctime())
+    # print(time.ctime())
 
 
 def nowturn(lst, time):

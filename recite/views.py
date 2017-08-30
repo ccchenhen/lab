@@ -12,8 +12,8 @@ import re
 @csrf_exempt
 def index(request):
 
-
     return render(request, 'recite/index.html')
+
 
 def getChapter(request):
 
@@ -23,7 +23,6 @@ def getChapter(request):
         chapter = Chapter.objects.get(pk=int(chap))
         serializer_c = ChapterSerializer(chapter)
         return JsonResponse(serializer_c.data)
-        # pass
 
 
 def addExp(request):

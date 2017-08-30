@@ -4,6 +4,9 @@ from recite.models import Word, Chapter, Expand
 
 class ExpandSerializer(serializers.ModelSerializer):
 
+    # def get_queryset(self):
+    #
+    #     return Expand.objects.filter(is_alive=True)
     class Meta:
 
         model = Expand

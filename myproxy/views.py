@@ -10,7 +10,7 @@ import requests
 from .models import Proxy, IpAddr
 from .utils.VerifyProxy import  verify
 from .utils.SortDt import sort
-from .utils.fetch import crwal
+from .utils.fetch import crawl
 
 
 
@@ -30,11 +30,11 @@ def manage(request):
     return render(request,'myproxy/new_index.html')
 
 # ===========手动工作 ======================================================
-TASKS = [crwal,sort,verify]
+TASKS = [crawl,sort,verify]
 @staff_member_required()
 def work(request):
     if request.method == 'GET':
-        crwal()
+        crawl()
         sort()
         verify()
 
