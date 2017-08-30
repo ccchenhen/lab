@@ -175,16 +175,9 @@ body, html {
     justify-content: flex-start;
 }
 
-
-.movie-ft{
-    bottom: 0;
-    position: absolute;
-    /*margin 0 auto;*/
-}
-
 .lab-footer{
     margin: 20px auto 0;
-    width: 66.67%;
+    position: relative;
 }
 
 .lab-footer h4{
