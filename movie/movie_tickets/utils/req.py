@@ -27,7 +27,10 @@ class Rep:
         return headers
 
     def get_proxy(self):
-        return pr.get_proxy()
+        try:
+            return pr.get_proxy()
+        except:
+            return
 
     # 请求网页，成功返回页面信息，失败返回 None
     # @make_print

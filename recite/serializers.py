@@ -2,29 +2,29 @@
 from rest_framework import serializers
 from recite.models import Word, Chapter, Expand
 
-class ExpandSerializer(serializers.ModelSerializer):
 
-    # def get_queryset(self):
-    #
-    #     return Expand.objects.filter(is_alive=True)
+class ExpandSerializer(serializers.ModelSerializer):
     class Meta:
 
         model = Expand
         fields = ('explansion', )
 
+
 class WordSerializer(serializers.ModelSerializer):
+    expand = serializers.SerializerMethodField()
 
-    # chapter_ = serializers.CharField(source='chapter.chapter')
-
-    expand = ExpandSerializer(many=True)
     class Meta:
         model = Word
         fields = ('id', 'word', 'explansion', 'phonogram', 'expand')
 
+    def get_expand(self, obj):
+        qs = obj.expand.filter(is_alive=True)
+        serializer = ExpandSerializer(qs, many=True)
+        return serializer.data
 
 class ChapterSerializer(serializers.ModelSerializer):
-
     voca = WordSerializer(many=True)
+
     class Meta:
         model = Chapter
         fields = ('id', 'chap', 'is_alive', 'voca')

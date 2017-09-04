@@ -167,6 +167,7 @@ class TaoPiaoPiao:
 
         return self.get_movie_tickets(*args)
 
+
     def get_timetable_from_taopp(self, url, film_name, date_):
 
         cinema_url = url
@@ -205,4 +206,3 @@ if __name__ == '__main__':
 #     print(i)
 
 # tpp.get_cinema_id(320500, '苏州')
-

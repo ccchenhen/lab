@@ -14,7 +14,6 @@ import requests
 class ProxyList:
 
 
-
     def __init__(self):
         self._proxies = []
         self.mark = 0
@@ -24,7 +23,7 @@ class ProxyList:
 
     def _get_proxies(self, url):
         try:
-            req = requests.get(url)
+            req = requests.get(url, timeout=2)
             proxy_lst = req.json()['proxies']
             for proxy in proxy_lst:
                 dct = {}
@@ -35,6 +34,7 @@ class ProxyList:
 
     def get_proxy(self):
         self._check()
+        if not self._proxies: return
         proxy = self._proxies[self.mark%len(self._proxies)]
         self.mark += 1
         return proxy

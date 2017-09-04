@@ -233,7 +233,6 @@ class Time:
         # cinema_url = url + '/?d={}'.format(str_date)
         # print(cinema_url)
         cinema_id = url.split('/')[-1]
-
         page = self.rp.req_url(url)
         # print(page)
         if not page: return

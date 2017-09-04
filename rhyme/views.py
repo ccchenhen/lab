@@ -4,9 +4,11 @@ from .models import Word, Rhyme
 import xpinyin
 from rhyme.worker.rhyme_index import RhymeDct
 
+
 def index(request):
 
     return render(request, 'rhyme/index2.html')
+
 
 def query(request):
 

@@ -33,7 +33,7 @@ def addExp(request):
         wid = request.GET.get('wid', None)
 
         if not all([ipt, wid]):
-            return Http404('not enough parameters')
+            return HttpResponse('not enough parameters')
 
         provider = request.META['REMOTE_ADDR']
         if not ipt or len(ipt) < 1:
