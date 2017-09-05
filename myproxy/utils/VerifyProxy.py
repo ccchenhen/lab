@@ -20,7 +20,7 @@ def verify_all():
     all_ip = Proxy.objects.filter(failed_time__lte=5).order_by('last_modified_time')
 
     count = len(all_ip)
-    per_hour = count // 24 + 1
+    per_hour = count // 100
     choosed_ip = all_ip[:per_hour]
 
     valid_count = 0

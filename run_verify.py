@@ -1,6 +1,6 @@
 # coding=utf-8
 import os, django
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "lab.server_settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "lab.settings")
 django.setup()
 
 

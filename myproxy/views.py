@@ -72,7 +72,7 @@ def get(request):
     judge = judge_request(request)
     if not judge:
         data = {}
-        data['code'] = 0
+        data['error'] = '访问过快,如有商业需求，请联系公众号 "crossin的编程教室"'
         return JsonResponse(data)
 
     if request.method == 'GET':
@@ -232,25 +232,24 @@ def judge_request(request):
     if query:
 
         addrins = query[0]
+        addrins.req_count += 1
 
         if addrins.limit == 'T':
             return False
-        if addrins.limit_count > 5:
+        if addrins.limit_count >= 5:
             addrins.limit = 'T'
 
-        addrins.req_count += 1
         # diff_timedelta = datetime.now(timezone.utc) - addrins.last_modified_time
         diff_timedelta = datetime.now() - addrins.last_modified_time
         # print(diff_timedelta)
         diff = diff_timedelta.seconds
-        # print(diff)
 
-        if diff < 3:
+        if diff < 50:
             addrins.limit_count += 1
+            addrins.save()
             return False
 
         addrins.save()
-
 
     else:
         IpAddr.objects.create(
