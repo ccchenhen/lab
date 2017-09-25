@@ -65,7 +65,7 @@ class Utils:
     def creat_chapter(self, nth):
         try:
             new = Chapter.objects.create(
-                chapter=nth,
+                chap=nth,
                 is_full=False
             )
 
