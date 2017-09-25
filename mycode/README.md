@@ -8,7 +8,7 @@
 
 - python3
 - django1.10
-- windows/linux/macos(未测试)
+- windows/linux
 
 #### 依赖库
 

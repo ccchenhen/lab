@@ -91,7 +91,6 @@ def verify_user(request):
 # 索引数据库
 @csrf_exempt
 def checkqr(request):
-    # pass
     if request.method == 'POST':
 
         data = {}

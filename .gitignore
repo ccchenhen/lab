@@ -6,4 +6,5 @@ uwsgi_params
 pic/
 server_settings.py
 config/
+.vscode
 

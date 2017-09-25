@@ -5,11 +5,13 @@ import xpinyin
 from rhyme.worker.rhyme_index import RhymeDct
 
 
+# 首页
 def index(request):
 
     return render(request, 'rhyme/index2.html')
 
 
+# 查询所有压韵词汇
 def query(request):
 
     if request.method == 'GET':
@@ -25,6 +27,8 @@ def query(request):
         return JsonResponse(res)
 
 
+# 根据用户输入的词汇，提取出韵脚
+#　比对数据库，提出所有相同韵脚的词
 def query_word(word):
 
     p = xpinyin.Pinyin()

@@ -79,10 +79,4 @@ class Utils:
 
 if __name__ == '__main__':
     ul = Utils()
-    # ul.delete_(Word)
-    # ul.delete_(Rhyme)
-    # ul.get_most_common(10)
-    # ul.get_total_num_lrc()
     ul.deduplicate()
-    # ul.save_words_freq('words-frequency-n.txt', 10, 'words', 'n')
-    # ul.open_txt()

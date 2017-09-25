@@ -3,8 +3,6 @@
 # description
 # 将 csv 中的数据转义到数据库中
 
-
-
 import os, django
 import sys
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -26,6 +24,7 @@ class Utils:
 
         self.filepath = 'python-words-new(juicy).csv'
 
+    # 读取 csv 文件
     def open_csv(self):
 
         with open(self.filepath, 'r', encoding='gbk', errors='ignore') as f:
@@ -37,6 +36,7 @@ class Utils:
 
         return lst
 
+    # 从数据库内读取单词
     def get_word(self, word):
 
         query = NewWord.select().where(NewWord.name == word)
@@ -49,6 +49,7 @@ class Utils:
         except:
             print('未找到',word)
 
+    #　通过 django-orm 存单词
     def create_word(self, lst, chapter):
 
         try:
@@ -60,7 +61,7 @@ class Utils:
             )
         except Exception as e:
             print(e)
-
+    # 创建章节
     def creat_chapter(self, nth):
         try:
             new = Chapter.objects.create(
@@ -73,13 +74,14 @@ class Utils:
         except Exception as e:
             print(e)
 
-
+    # 每个单元仅包含 50 个单词
+    # 所以要检测单元是否满了
     def full_chapter(self, chapter):
 
         chapter.is_full = True
         chapter.save()
 
-
+    # 主函数
     def main(self):
 
         word_lst = self.open_csv()

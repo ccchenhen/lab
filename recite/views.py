@@ -14,7 +14,8 @@ def index(request):
 
     return render(request, 'recite/index.html')
 
-
+# 获取某章节下所有单词
+# 默认为第一单元
 def getChapter(request):
 
     if request.method == 'GET':
@@ -24,7 +25,7 @@ def getChapter(request):
         serializer_c = ChapterSerializer(chapter)
         return JsonResponse(serializer_c.data)
 
-
+# 用户添加解释
 def addExp(request):
 
     if request.method == 'GET':

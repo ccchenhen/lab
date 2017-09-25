@@ -195,14 +195,3 @@ if __name__ == '__main__':
     film_name = '战狼'
     tpp = TaoPiaoPiao()
     res = tpp.get_timetable_from_taopp(url, film_name, '2017-08-01')
-
-    # for i in res:
-    #     print(i)
-# tpp.get_city_code()
-# print(tpp.loc_queue.qsize())
-# tpp.crawler()
-# res = tpp.get_movie_tickets('苏州', '相城', '幸福蓝海', '京城81号2')
-# for i in res:
-#     print(i)
-
-# tpp.get_cinema_id(320500, '苏州')

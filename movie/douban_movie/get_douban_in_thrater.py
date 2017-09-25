@@ -3,7 +3,7 @@
 # date = 2017.7.24
 # description
 # 从 豆瓣 api 获取当前上映的电影
-
+# 已经注册到 crontab 中，每天会爬取一次，更新数据库内容
 import os, django
 import sys
 
@@ -31,7 +31,6 @@ class DoubanMovie:
     # 解析 api 返回的 json 信息
     # 返回一个列表， 包含所有 电影(Movie) 实例
     # 浏览不同的电影票购买网站，发现当前天在映的电影不会超过 10 部
-    # 所以取豆瓣结果中 评分不为 0 的电影前 10 部即可
     def _parse_movie(self, dct):
 
         movie_lst = dct.get('subjects', None)
@@ -73,9 +72,6 @@ class DoubanMovie:
             new = self._add_movie(title,rate,b_url,m_url,casts,directors,genes)
             cur_movies.append(new)
 
-
-        # print(cur_movies)
-        # print(len(cur_movies))
         return cur_movies
 
     # 依据电影名查询数据是已经添加进数据库
@@ -113,10 +109,8 @@ class DoubanMovie:
         for movie in m_lst:
             m_id.append(movie.id)
 
-        # print(m_id)
         query = Movie.objects.filter(is_in_theater=True)
         for m in query:
-            # print(m.id)
             if m.id not in m_id:
                 m.is_in_theater = False
                 m.save()
@@ -153,18 +147,7 @@ class DoubanMovie:
         movie_lst = self._parse_movie(movie_json)
         self._invalid_old(movie_lst)
 
-
-    # ===============
-    def _test(self):
-        query = Movie.objects.all()
-        for i in query:
-            # print(i.is_in_theater)
-
-            i.is_in_theater = True
-            i.save()
-
 if __name__ == '__main__':
 
     db = DoubanMovie()
     db.run_douban()
-# db._test()

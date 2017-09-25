@@ -3,7 +3,8 @@
 # date = 2017.7.4
 '''
 description:
-封装请求网页的方法，包含普通的 request，也包含 selenium 等
+封装请求网页的方法，包含普通的 request
+tpp　的请求方法比较特殊，要在　header 中加入地区标记
 
 '''
 
@@ -72,13 +73,3 @@ class Rep:
         self.citycode = cookie
 
         return cookie
-
-
-# print(get_header())
-# rq = Rep()
-# ini_url = 'https://dianying.taobao.com/cinemaList.htm?city=440300'
-# url = 'https://dianying.taobao.com/ajaxCinemaList.htm?page=1&pageSize=10&pageLength=22&n_s=new'
-# s = rq.req_url(ini_url, use_re_header=True)
-# s2 = rq.req_url(url, use_re_header=True)
-# print(rq.response_header)
-# print(s2)

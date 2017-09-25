@@ -7,6 +7,7 @@
 # 建立两个 table: word-book
 # 以下为 newword 的原因是由于之前创建过一次，但需要扩展字段
 # 所有迁移了数据，重新建了表
+# 目前已经没有用了 20170922
 
 # from settings import DATABASE
 from peewee import *

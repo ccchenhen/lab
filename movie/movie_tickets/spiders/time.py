@@ -130,12 +130,10 @@ class Time:
         soup = bs4.BeautifulSoup(page, 'lxml')
         soup_s = soup.find('script', text=re.compile('cinemaShowtimesScriptVariables'))
         text = soup_s.get_text(strip=True)
-        # print(text)
         # 处理 js 字典
         # 将 js 字典转为 python 可用的字典
         start_ = text.index('{')
         res = str(text[start_:])
-        # print(res)
         res = res.replace('true', '1')
         res = res.replace('false', '0')
         res = re.sub(r'new Date\(', '', res)
@@ -143,10 +141,7 @@ class Time:
         dct = json.loads(res)
 
         movieid = self._get_movie_id(dct['movies'], movie)
-        # assert movieid, '未查询到该电影'
-        # print(movieid)
         if not movieid: return
-        # print('')
         # 获取　非当日　排片
         date_ = self._check_date(str_date)
         if date_:
@@ -227,17 +222,14 @@ class Time:
         # city, dis, c_name, m_name = args
         return self._get_tickets_info(*args)
 
-
+    
+    # django 接口
     def get_timetable_from_time(self, url, film_name, str_date):
 
         # cinema_url = url + '/?d={}'.format(str_date)
-        # print(cinema_url)
         cinema_id = url.split('/')[-1]
         page = self.rp.req_url(url)
-        # print(page)
         if not page: return
-        # assert page, '网络请求错误'
-        # print(args[3])
         try:
             res_or_id = self._parse_tickets_html(page, film_name, str_date)
             if isinstance(res_or_id, list):
@@ -251,13 +243,3 @@ class Time:
 if __name__ ==  '__main__':
     ti = Time()
     res = ti.get_timetable_from_time('http://theater.mtime.com/China_Shanghai_Xuhuiqu/1045', '建军大业', '2017-08-01')
-    # print(res)
-    # for i in res:
-    #     print(i)
-    # ti.s()
-    # ti._parse_time_dt()
-    # res = ti._get_tickets_info('上海', '杨浦', '中影', '悟空')
-    # for i in res:
-    #     print(i)
-    # res = ti._stamp2time(1501449973)
-    # print(res)

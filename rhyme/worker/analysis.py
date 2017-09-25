@@ -85,7 +85,7 @@ class AnaRhyme:
                 res.append((word,flag))
 
         return set(res)
-    #
+    # 
     def _analysis_words(self, words):
 
         word_py = self.pin.get_pinyin((u'{}'.format(words)))
@@ -116,17 +116,6 @@ class AnaRhyme:
             t = threading.Thread(target=self._analysis_one, args=(lrc,))
             t.start()
             t.join()
-
-    # def t2(self):
-
-        # print(next(self._extract()))
-        # print('==========')
-        # print(next(self._extract()))
-        # t = Lrc.get(Lrc.music_id == 493752191)
-        # print(t)
-        # t = Lrc.select()
-        # for i in t:
-        #     print(i.music_id)
 
 if __name__ == '__main__':
     ana = AnaRhyme()

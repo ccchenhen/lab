@@ -170,14 +170,6 @@ class Nuomi:
             theater = i.find('div', class_="theater").string
             price = i.find('div', class_="price").get_text(';').strip()
             price = price.split(';')[2]
-            # member_price = i.find('div', class_="member-price")
-            # if member_price:
-            #     member_price = member_price.get_text(strip=True)
-            #     member_price = member_price.replace('&yen', '-')
-
-            # else:
-            #     member_price = 'None'
-
             daily_.append((start_time, end_time, lan, theater, price))
 
         return res
@@ -219,24 +211,6 @@ class Nuomi:
 if __name__ == '__main__':
     nm = Nuomi()
     res = nm.get_timetable_from_nuomi('https://mdianying.baidu.com/cinema/detail?cinemaId=409#showing', '建军大业',1)
-    # for i in res:
-    #     print(i)
-    # nm._get_city_code()
-    # nm._get_cinema(289, '上海')
-    # nm.crwaler()
-    # res = nm._get_tickets_info('上海', '闵行', '保利', '悟空')
-    # pre = 0
-    # for i in range(1,len(res)):
-    #
-    #     pre_time = res[pre][0].split(':')
-    #     pre_time = int(''.join(pre_time))
-    #
-    #     cur_time = res[i][0].split(':')
-    #     cur_time = int(''.join(cur_time))
-    #
-    #     if pre_time > cur_time:
-    #         break
-    #
-    #     pre += 1
+
 
 

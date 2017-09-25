@@ -3,6 +3,14 @@
 # date = 2017.7.25
 # description
 # 将之前在 movie_ticket 项目中产生的数据迁移到 django 数据库中
+# 在前期的爬取过程中，从　淘票票/时光网/糯米　分别存在三张表内
+# 将项目迁移到 django 时，产生了合并这三个表的需求
+# 但各家网站对同一家电影院的描述有差异
+# 举例，针对 '时代影城', 可能淘票票上是 '上海时代影城' 而时光上是 '上海闵行时代影城'
+# 最后使用了一个可以比对　两个字符串　相似度的库　Levenshtein
+# 思路是当两个字符串相比得到的比率大于 0.7 时，根据经验判断两个字符串在描述同一家影院
+
+# 合并完成之后，该脚本已经没有用了，不需要再维护
 
 import os, django
 import sys
@@ -33,11 +41,6 @@ class Migration:
         count = 0
         for item in self.tpp.extract():
 
-            # if count == 10:
-            #     break
-            # count += 1
-            # city,district,location,cinema_name,taopp_url = item[1], item[2], item[5], item[3], item[4]
-            # print(city,district,location,cinema_name,taopp_url)
             CinemaUrl.objects.create(
                 city=item[1],
                 district=item[2],
@@ -77,12 +80,7 @@ class Migration:
         count_1 = 0
         count_2 = 0
         for item in self.nm.extract():
-            # count += 1
-            # if count < 100:continue
-            # if count == 200: break
             city, district, location, cinema_name, nuomi_url = item[1], item[2], item[5], item[3], item[4]
-            # print('--------------------')
-            # print(location, cinema_name)
             q_res = self._query_url(city, district, location, cinema_name)
             if q_res:
                 # print(q_res)

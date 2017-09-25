@@ -106,7 +106,6 @@ def fetch_k1():
                     continue
                 KD_IP.append(ip)
 
-                # print(dic,http_type,district)
                 gm.save_proxy('快代理', ip, port, http_head, district=district, http_type=ip_type)
 
             time.sleep(5)

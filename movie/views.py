@@ -48,11 +48,8 @@ def cinema(request):
         district = request.POST.get('district', None)
         if not city or not district:
             return HttpResponse('not enough parameters')
+        # 根据城市名和街区名筛选电影院
         query = CinemaUrl.objects.filter(city__contains=city).filter(district__startswith=district)
-        # print(query)
-        # for i in query:
-        #     print(i.district, i.cinema_name)
-
         content = {
             'cinemas': query
         }
@@ -64,8 +61,10 @@ def cinema(request):
 # ajax　请求
 def tickets(reqeust):
 
+    # 从页面得到三个参数　日期/电影院在数据库内的id/电影名
+    # 根据以上三个参数，分别请求三个电影票提供网站
+    # 实时爬取得到结果后返回给前端
     if reqeust.is_ajax():
-        # print(reqeust.POST)
         str_date = reqeust.POST.get('date')
         if not str_date:
             return HttpResponse('need parameter "date"')
@@ -74,7 +73,6 @@ def tickets(reqeust):
         # 给糯米的时间参数
         delta = (date_ - datetime.date.today()).days
         # 给淘票票的时间参数直接为 str_date
-
         time_date = ''.join(str_date.split('-'))
         pk = reqeust.POST.get('pk')
         film = reqeust.POST.get('film')

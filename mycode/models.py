@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 
+# 用户信息
 class Profile(models.Model):
 
     user = models.OneToOneField(User)
@@ -25,7 +26,7 @@ class Profile(models.Model):
         return self.nickname
 
 
-
+# 仓库
 class Directory(models.Model):
 
 
@@ -50,7 +51,7 @@ class Directory(models.Model):
         ordering = ['-freq']
 
 
-
+# 物品
 class Goods(models.Model):
 
     belong = models.ForeignKey('Directory', verbose_name='商品归属库', default=None)
@@ -67,7 +68,7 @@ class Goods(models.Model):
         return self.name
 
 
-
+# 日志
 class Log(models.Model):
 
     owner = models.ForeignKey('Profile', verbose_name='日志所属人', default=None)
@@ -89,24 +90,6 @@ class Log(models.Model):
 
     # 出入库
     good = models.ForeignKey('Goods', verbose_name='操作商品', blank=True, null=True)
-
-    # def __str__(self):
-
-        # type = ''
-        # display = '用户:{0} 时间:{1} 动作:{2} 操作库:{3} 操作商品:{4}'
-        # for i in self.TYPE:
-        #     if self.type == i[0]:
-        #         type = i[1]
-        #         break
-        #
-        # c_time = self.created_time.strftime('%Y-%m-%d %I:%M:%S')
-        #
-        # g_name = ''
-        # if self.good:
-        #     g_name = self.good.name
-        # return display.format(self.owner.nickname, c_time, type, self.dir.name, g_name)
-
-        # return
 
 
 

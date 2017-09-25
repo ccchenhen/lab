@@ -46,6 +46,8 @@ class GeneralMethods():
             type=http_type
         )
 
+    # 由于性能不稳定
+    # 涉及到 selenium 的方法都已经弃用
     def get_cookie_by_selenium(self, url):
         '''使用 selenium 获取 cookie
 
@@ -62,7 +64,8 @@ class GeneralMethods():
         except Exception as e:
             print(e)
 
-
+    # 由于性能不稳定
+    # 涉及到 selenium 的方法都已经弃用
     def get_source_by_selenium(self, url):
         try:
             driver = webdriver.PhantomJS()
@@ -113,11 +116,8 @@ class GeneralMethods():
     def printprocesstime(self, func):
         @wraps(func)
         def wrap():
-
             print('start {0} at {1}'.format(func.__name__, time.ctime()))
-
-            func()
-
+            return func()
             print('end {0} at {1}'.format(func.__name__, time.ctime()))
 
         return wrap
